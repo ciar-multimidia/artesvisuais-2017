@@ -1,0 +1,97 @@
+body.portal {
+	background: transparent url('../img/bgportal.jpg') center center no-repeat fixed / cover;
+
+	#topo, #rodape {
+		.container {width: calc(100% - 40px);}
+	}
+	
+	section {
+		width: 100%;
+		height: calc(100vh - 179px);
+	    @include display(flex);
+	    @include flex-direction(row);
+	    @include flex-wrap(wrap);
+	    @include justify-content(space-between);   
+
+		div {
+			width: 25%;
+			position: relative;
+			background-color: transparentize(#fff,0.6);
+			border-left: 1px solid #d1d3d4;
+			@extend %transicao;
+
+			&:before {
+				content: "";
+				@extend %transicao;
+				position: absolute;
+				bottom: 0px; left: 0;
+				width: 100%; height: 100%;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: right bottom;
+				opacity: 0;
+			}
+
+			&:hover {
+
+				&:before {
+					opacity: 1;
+					bottom: 0;
+				}
+			}
+
+			h2 {
+				color: #fff;
+				text-align: left;
+				width: 100%;
+				display: block;
+				position: relative;
+				margin: 200px 0 0;
+				line-height: 1.2;
+				font-size: 2.8em;
+				padding: 0 40px;
+				font-family: $fonte-destaque;
+
+			}
+
+
+			a {
+				position: relative;
+				display: block;
+				width: 100%;
+				padding: 0 40px;
+				font-size: 21px;
+			    line-height: 1.8;
+			    // font-weight: bold;
+			    // text-transform: uppercase;
+	    		color: $padrao;
+	    		font-family: $fonte-destaque;
+				z-index: 2;
+				&:hover {color: $livro1; 
+				}
+		
+
+
+			}
+
+			&.livro1 {
+				border: 0;
+				h2 {color: $livro1}
+				&:before {background-image: url('../img/ilustra1.png');}
+			}
+			&.livro2 {
+				
+				h2 {color: $livro2}
+				&:before {background-image: url('../img/ilustra2.png');}
+			}
+			&.livro3 {
+				h2 {color: $livro3}
+				&:before {background-image: url('../img/ilustra3.png');}
+			}
+			&.livro4 {
+				h2 {color: $livro4}
+				&:before {background-image: url('../img/ilustra4.png');}
+			}
+		}
+	}
+}

@@ -1,0 +1,245 @@
+// artigo completo
+article {
+	margin: 50px 0 100px;
+	width: 100%;
+	@include display(flex);
+	@include flex-direction(column);
+	@include align-items(center);
+	position: relative;
+	overflow-x: hidden;
+
+	// estilo padrao para os filhos do Article. Alguns elementos sobrepoem esse estilo de forma individual logo abaixo.
+	$margem: 1em;
+	& > *{
+		width: $largura-minima;
+		margin-top: $margem;
+		&:first-child{
+			margin-top: 0;
+		}	
+	}
+	
+	// Estilo basico dos autores
+	.autores{
+				padding: 20px 26px;
+				display: inline-block;
+				background: #F2F2F2;
+				width: $largura-minima;
+				// border: 1px solid black;
+				text-align: left;
+				margin-top: 2em;
+				margin-bottom: 1em;
+				p{
+					margin: 0;
+				}
+				h3{
+					margin: 0;
+				}
+	}
+
+	h2.modulox{
+		color: $livro1;
+		font-size: 2em;
+	}
+
+
+	// Estilo basico para os headings
+	& >{
+		h1,h2,h3,h4,h5,h6{
+			margin-bottom: 0;
+			line-height: 1.2;
+			width: $largura-minima;
+			font-family: $fonte-destaque;
+		}
+	}
+	
+
+	& > p{
+		width: $largura-minima;
+	}
+
+	.catalografica {
+		width: $largura-minima;
+		font-size: 0.9em;
+		border: 1px solid; 
+		img {width: 100%; height: auto;}
+
+		p {margin: 0 0 20px;}
+
+		.titulo {position: relative; width: 100%; font-size: 1.1em; border-bottom: 1px solid; padding: 10px}
+
+		.codigo {position: relative; 
+			width: 8%; float: left; padding: 15px 15px 0 15px; font-size: 1.1em;
+		}
+		
+		.dados {position: relative; width: 90%; float: right; text-align: left; padding: 15px 15px 0 15px;
+			.cdu {text-align: right;}
+		}
+	}
+
+	blockquote{
+		width: $largura-minima;
+		padding-left: 60px;
+		font-size: 0.9em;
+		& > *{
+			margin: 0;
+			margin-top: $margem;
+			&:first-child{
+				margin-top: 0;
+			}
+			width: 100%;
+		}
+	}
+
+	// Estilo de tabelas
+	
+	table{
+		text-align: left;
+		width: auto;
+		@include largura-maxima(max-width);
+		min-width: $largura-minima;
+		th, td{
+			// border: 1px solid black;
+			background: hsl(0,0, 97%);
+			padding: 0 20px;
+		}
+
+		caption{
+			font-size: 0.9em;
+			line-height: 1.2;
+			color: gray;
+		}
+	}
+
+
+	
+	& > figure{
+		@include largura-maxima(max-width);
+		padding: 0;
+		margin:42px 0;
+		img{
+			width: 100%;
+			height: auto;
+		}
+		figcaption{
+			text-align: center;
+			display: block;
+			font-size: 0.9em;
+			line-height: 1.2;
+			color: grey;
+		}
+	}
+
+	span.numero-rodape{
+	    font-size: 0.8em;
+	    line-height: 1;
+	    border-radius: 50%;
+	    width: 20px;
+	    height: 20px;
+	    line-height: 20px;
+	    margin: -1px 0 0 -2px;
+	    display: inline-block;
+	    vertical-align: top;
+	    text-align: center;
+	    // border: 1px solid;
+	    cursor: pointer;
+		&:before{
+			content: attr(data-numero);
+			font-weight: bold;
+			display: inline;
+		}
+	}
+
+	$largura-notas-rodape: 420px;
+
+	div.nota-rodape{
+		margin: 0;
+		display: none;
+		position: absolute;
+		right: 0;
+		@include transform(translateX(110%));
+		@include transition(transform 0.4s ease-in-out);
+		width: $largura-notas-rodape;
+		font-size: 0.9em;
+		text-align: justify;
+		
+		background-color: white;
+		z-index: 3;
+
+		&.db{
+			@include display(flex);
+		}
+		&.visivel{
+			z-index: 4;
+			@include transform(translateX(2px));
+		}
+
+		.posrel{
+			line-height: 1.4em;
+			border-width: 1px;
+			border-left-width: 1px;
+			border-style: solid;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			padding: 32px 28px 14px;
+			@include display(flex);
+			@include flex-direction(column);
+			@include align-items(flex-end);
+
+		}
+
+
+		button.fechar{
+			@include appearance(none);
+			border: 0px solid transparent;
+			background-color: transparent;
+			padding: 0;
+			margin: 0;
+			width: 14px;
+			height: 14px;
+			background-image: url(../img/icone-fechar.svg);
+			background-size: cover;
+			&:focus{
+				outline: 0px solid transparent;
+			}
+			&:hover{
+				cursor: pointer;
+			}
+		}
+		p.numero-equivalente{
+			position: absolute;
+			left: 0;
+			top: 50%;
+			@include transform(translate(-50%, -50%));
+			line-height: 0;
+			border-radius: 50%;
+			width: 25px;
+			height: 25px;
+			margin: 0;
+			display: inline-block;
+			text-align: center;
+			// border: 2px solid;
+			vertical-align: middle;
+			@include display(flex);
+			@include justify-content(center);
+			@include align-items(center);
+		}
+
+		
+		div.texto{
+			margin-top: 0.5em;
+			p{
+				&:first-child{
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
