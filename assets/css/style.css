@@ -412,7 +412,7 @@ template {
 [hidden] {
   display: none; }
 
-a, a:link, a:visited, a:active, a:focus, body.portal section div, body.portal section div:before {
+a, a:link, a:visited, a:active, a:focus {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
@@ -426,11 +426,11 @@ a, a:link, a:visited, a:active, a:focus, body.portal section div, body.portal se
 a, a:link, a:visited, a:active, a:focus {
   text-decoration: none;
   word-break: break-all;
-  color: gray; }
+  color: #484848; }
   article p a, article p a:link, article p a:visited, article p a:active, article p a:focus {
-    box-shadow: inset 0 -4px 0 rgba(102, 102, 102, 0.2); }
+    box-shadow: inset 0 -4px 0 rgba(85, 85, 85, 0.2); }
     article p a:hover, article p a:link:hover, article p a:visited:hover, article p a:active:hover, article p a:focus:hover {
-      box-shadow: inset 0 -4px 0 rgba(102, 102, 102, 0.35); }
+      box-shadow: inset 0 -4px 0 rgba(85, 85, 85, 0.35); }
 
 .ocultar {
   visibility: hidden; }
@@ -1177,27 +1177,6 @@ body {
       -ms-transform: translateY(-50%);
       -o-transform: translateY(-50%);
       transform: translateY(-50%); }
-  #topo.folharosto {
-    height: 550px; }
-    #topo.folharosto .container {
-      height: 550px; }
-      #topo.folharosto .container a.marca {
-        top: 25px;
-        -webkit-transform: translateY(0);
-        -moz-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -o-transform: translateY(0);
-        transform: translateY(0); }
-      #topo.folharosto .container .dadosinfo {
-        position: absolute;
-        left: 0;
-        bottom: 25px;
-        height: 360px;
-        padding: 10px;
-        display: inline-block;
-        font-size: 0.9em;
-        width: 48%;
-        border: 2px solid #fff; }
 
 article {
   margin: 50px 0 100px;
@@ -1552,7 +1531,7 @@ article {
       right: 0;
       display: block;
       text-align: center;
-      color: #666666; }
+      color: #555; }
       #rodape .container .btn-subir:before {
         content: '\2303';
         display: block;
@@ -1564,7 +1543,7 @@ body.portal {
     width: calc(100% - 40px); }
   body.portal section {
     width: 100%;
-    height: calc(100vh - 179px);
+    padding: 0 0 50px;
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -1598,68 +1577,55 @@ body.portal {
     -o-justify-content: space-between;
     justify-content: space-between;
     -ms-flex-pack: justify; }
-    body.portal section div {
-      width: 25%;
+    body.portal section .modulo {
+      width: calc(25% - 20px);
+      background: rgba(255, 255, 255, 0.6);
+      margin: 10px;
+      padding: 15px;
       position: relative;
-      background-color: rgba(255, 255, 255, 0.4);
-      border-left: 1px solid #d1d3d4; }
-      body.portal section div:before {
-        content: "";
-        position: absolute;
-        bottom: 0px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: right bottom;
-        opacity: 0; }
-      body.portal section div:hover:before {
-        opacity: 1;
-        bottom: 0; }
-      body.portal section div h2 {
-        color: #fff;
-        text-align: left;
-        width: 100%;
-        display: block;
-        position: relative;
-        margin: 200px 0 0;
-        line-height: 1.2;
-        font-size: 2.8em;
-        padding: 0 40px;
-        font-family: "Jaldi", sans-serif; }
-      body.portal section div a {
-        position: relative;
-        display: block;
-        width: 100%;
-        padding: 0 40px;
-        font-size: 21px;
-        line-height: 1.8;
-        color: #666666;
-        font-family: "Jaldi", sans-serif;
-        z-index: 2; }
-        body.portal section div a:hover {
-          color: #5B1980; }
-      body.portal section div.livro1 {
-        border: 0; }
-        body.portal section div.livro1 h2 {
-          color: #5B1980; }
-        body.portal section div.livro1:before {
-          background-image: url("../img/ilustra1.png"); }
-      body.portal section div.livro2 h2 {
-        color: #E75A19; }
-      body.portal section div.livro2:before {
-        background-image: url("../img/ilustra2.png"); }
-      body.portal section div.livro3 h2 {
-        color: #C70051; }
-      body.portal section div.livro3:before {
-        background-image: url("../img/ilustra3.png"); }
-      body.portal section div.livro4 h2 {
-        color: #0090B6; }
-      body.portal section div.livro4:before {
-        background-image: url("../img/ilustra4.png"); }
+      font-size: 0.95em; }
+      body.portal section .modulo h2 {
+        margin-top: 0; }
+      body.portal section .modulo ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0; }
+        body.portal section .modulo ul li {
+          padding: 0 0 10px; }
+          body.portal section .modulo ul li:before {
+            background: #5B1980;
+            width: 12px;
+            height: 6px;
+            margin-right: 6px;
+            border-radius: 6px;
+            content: "";
+            display: inline-block; }
+          body.portal section .modulo ul li a:hover {
+            text-decoration: underline; }
+          body.portal section .modulo ul li.eixo1:before {
+            background: #5B1980; }
+          body.portal section .modulo ul li.eixo2:before {
+            background: #E75A19; }
+          body.portal section .modulo ul li.eixo3:before {
+            background: #C70051; }
+          body.portal section .modulo ul li.eixo4:before {
+            background: #0090B6; }
+      body.portal section .modulo.desabilitado {
+        background: rgba(255, 255, 255, 0.4); }
+        body.portal section .modulo.desabilitado * {
+          color: #bbbbbb !important; }
+        body.portal section .modulo.desabilitado:after {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          content: "";
+          top: 0;
+          right: 0;
+          cursor: not-allowed; }
+        body.portal section .modulo.desabilitado ul li:before {
+          background: #bbbbbb; }
 
-.sumario {
+.duascol {
   -webkit-flex-basis: 100%;
   -moz-flex-basis: 100%;
   flex-basis: 100%;
@@ -1696,59 +1662,50 @@ body.portal {
   -ms-justify-content: space-between;
   -o-justify-content: space-between;
   justify-content: space-between;
-  -ms-flex-pack: justify;
-  color: #666666; }
-  .sumario a {
-    color: inherit;
-    word-break: break-word; }
-    .sumario a.linkficha {
-      font-size: 1.2em;
-      font-family: "Jaldi", sans-serif; }
-  .sumario > div {
+  -ms-flex-pack: justify; }
+  .duascol > div {
     -webkit-flex-basis: calc(50% - 20px);
     -moz-flex-basis: calc(50% - 20px);
     flex-basis: calc(50% - 20px);
     -ms-flex-preferred-size: calc(50% - 20px);
-    padding: 25px;
     margin: 0 0 40px;
-    border-left: 5px solid #5B1980;
     background: rgba(255, 255, 255, 0.7);
     position: relative; }
-    .sumario > div h2 {
+    .duascol > div h2 {
       text-transform: uppercase;
       margin-top: 0;
       line-height: 1.2;
       font-size: 1.5em;
       font-family: "Jaldi", sans-serif;
       color: #5B1980; }
-      .sumario > div h2 small {
+      .duascol > div h2 small {
         font-size: 20px;
         line-height: 1.4;
         text-transform: none;
         display: block; }
-    .sumario > div ul {
+    .duascol > div ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       line-height: 1; }
-      .sumario > div ul li {
+      .duascol > div ul li {
         display: block;
         float: left;
         clear: both;
         margin: 12px 0; }
-        .sumario > div ul li:before {
+        .duascol > div ul li:before {
           content: '\2022';
           display: inline-block;
           vertical-align: middle;
           margin-right: 10px;
           color: #5B1980; }
-        .sumario > div ul li:last-child {
+        .duascol > div ul li:last-child {
           margin-bottom: 15px; }
-      .sumario > div ul ul li {
+      .duascol > div ul ul li {
         margin-left: 20px; }
-        .sumario > div ul ul li:before {
+        .duascol > div ul ul li:before {
           content: '\21B3'; }
-  .sumario .logos {
+  .duascol .logos {
     -webkit-flex-basis: 100%;
     -moz-flex-basis: 100%;
     flex-basis: 100%;
@@ -1756,127 +1713,10 @@ body.portal {
     background: transparent;
     border: 0;
     padding: 0; }
-    .sumario .logos img {
+    .duascol .logos img {
       max-width: 100%;
       text-align: center;
       display: block;
       margin: 0 auto; }
-
-body.livro1 #topo {
-  outline-color: #5B1980; }
-  body.livro1 #topo .container a.sumario {
-    border-color: #5B1980; }
-  body.livro1 #topo .container .dadosinfo {
-    border-color: #5B1980; }
-body.livro1 h1, body.livro1 h2, body.livro1 h3, body.livro1 h4, body.livro1 h5, body.livro1 h6 {
-  color: #3d1155; }
-body.livro1 article header.cabecalho div.autores_anexos div.autores {
-  background: #F2F2F2;
-  border-color: #F2F2F2; }
-body.livro1 article header.cabecalho div.autores_anexos div.box-anexos div.anexos figure {
-  outline-color: #cccccc; }
-body.livro1 article span.numero-rodape {
-  background: #cccccc; }
-body.livro1 article div.nota-rodape .posrel {
-  border-color: #cccccc; }
-body.livro1 article div.nota-rodape p.numero-equivalente {
-  background: #cccccc; }
-body.livro1 #rodape {
-  outline-color: #5B1980; }
-  body.livro1 #rodape .container a.anterior:before {
-    text-shadow: -10px 0px 0 #5B1980; }
-  body.livro1 #rodape .container a.proximo:after {
-    text-shadow: 10px 0px 0 #5B1980; }
-
-body.livro2 #topo {
-  outline-color: #E75A19; }
-  body.livro2 #topo .container a.sumario {
-    border-color: #E75A19; }
-  body.livro2 #topo .container .dadosinfo {
-    border-color: #E75A19; }
-body.livro2 h1, body.livro2 h2, body.livro2 h3, body.livro2 h4, body.livro2 h5, body.livro2 h6 {
-  color: #a33f11; }
-body.livro2 article header.cabecalho div.autores_anexos div.autores {
-  background: #f8cebb;
-  border-color: #ba4813; }
-body.livro2 article header.cabecalho div.autores_anexos div.box-anexos div.anexos figure {
-  outline-color: #ba4813; }
-body.livro2 article span.numero-rodape {
-  border-color: #ba4813;
-  background: #f8cebb; }
-body.livro2 article div.nota-rodape .posrel {
-  border-color: #ba4813; }
-body.livro2 article div.nota-rodape p.numero-equivalente {
-  border-color: #ba4813;
-  background: #f8cebb; }
-body.livro2 #rodape {
-  outline-color: #E75A19; }
-  body.livro2 #rodape .container a.anterior:before {
-    text-shadow: -10px 0px 0 #E75A19; }
-  body.livro2 #rodape .container a.proximo:after {
-    text-shadow: 10px 0px 0 #E75A19; }
-
-body.livro3 #topo {
-  outline-color: #C70051; }
-  body.livro3 #topo .container a.sumario {
-    border-color: #C70051; }
-  body.livro3 #topo .container .dadosinfo {
-    border-color: #C70051; }
-body.livro3 h1, body.livro3 h2, body.livro3 h3, body.livro3 h4, body.livro3 h5, body.livro3 h6 {
-  color: #610027; }
-body.livro3 article header.cabecalho div.autores_anexos div.autores {
-  background: #ff61a1;
-  border-color: #94003c; }
-body.livro3 article header.cabecalho div.autores_anexos div.box-anexos div.anexos figure {
-  outline-color: #94003c; }
-body.livro3 article span.numero-rodape {
-  border-color: #94003c;
-  background: #ff61a1; }
-body.livro3 article div.nota-rodape .posrel {
-  border-color: #94003c; }
-body.livro3 article div.nota-rodape p.numero-equivalente {
-  border-color: #94003c;
-  background: #ff61a1; }
-body.livro3 #rodape {
-  outline-color: #C70051; }
-  body.livro3 #rodape .container a.anterior:before {
-    text-shadow: -10px 0px 0 #C70051; }
-  body.livro3 #rodape .container a.proximo:after {
-    text-shadow: 10px 0px 0 #C70051; }
-
-body.livro #topo {
-  outline-color: #0090B6; }
-  body.livro #topo .container a.sumario {
-    border-color: #0090B6; }
-  body.livro #topo .container .dadosinfo {
-    border-color: #0090B6; }
-body.livro h1, body.livro h2, body.livro h3, body.livro h4, body.livro h5, body.livro h6 {
-  color: #005c74; }
-body.livro article header.cabecalho div.autores_anexos div.autores {
-  background: #0ecdff;
-  border-color: #006883; }
-body.livro article header.cabecalho div.autores_anexos div.box-anexos div.anexos figure {
-  outline-color: #006883; }
-body.livro article span.numero-rodape {
-  border-color: #006883;
-  background: #0ecdff; }
-body.livro article div.nota-rodape .posrel {
-  border-color: #006883; }
-body.livro article div.nota-rodape p.numero-equivalente {
-  border-color: #006883;
-  background: #0ecdff; }
-body.livro #rodape {
-  outline-color: #0090B6; }
-  body.livro #rodape .container a.anterior:before {
-    text-shadow: -10px 0px 0 #0090B6; }
-  body.livro #rodape .container a.proximo:after {
-    text-shadow: 10px 0px 0 #0090B6; }
-
-body.sumario {
-  background: transparent url("../img/bg.jpg") center center no-repeat/cover; }
-  body.sumario #topo {
-    border: 0;
-    outline: 0;
-    background: transparent; }
 
 /*# sourceMappingURL=style.css.map */

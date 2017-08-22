@@ -1,10 +1,10 @@
 jQuery(document).ready(function($) {
 	var corpo = $('body');
 	var titulosVolumes = [
-		"EIXO 1",
-		"EIXO 2",
-		"EIXO 3",
-		"EIXO 4"
+		"Modulo 1",
+		"Modulo 2",
+		"Modulo 3",
+		"Modulo 4"
 	];
 
 	var templateHeader = $('\
@@ -21,9 +21,9 @@ jQuery(document).ready(function($) {
 	');
 
 	$.each(titulosVolumes, function(index, val) {
-		 if (corpo.hasClass('livro'+(index+1) ) ) {
+		 if (corpo.hasClass('modulo'+(index+1) ) ) {
 		 	clone = templateHeader.clone();
-		 	clone.find('span.livro').html(val);
+		 	clone.find('span.modulo').html(val);
 		 	corpo.prepend(clone);
 		 }
 	});

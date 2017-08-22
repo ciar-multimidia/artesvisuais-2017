@@ -1,9 +1,9 @@
 // CORES
-$livro1: #5B1980;
-$livro2: #E75A19;
-$livro3: #C70051;
-$livro4: #0090B6;
-$padrao: #666666;
+$eixo1: #5B1980;
+$eixo2: #E75A19;
+$eixo3: #C70051;
+$eixo4: #0090B6;
+$padrao: #555;
 
 
 
@@ -72,7 +72,7 @@ $fonte-padrao: 'Roboto',sans-serif;
 a, a:link, a:visited, a:active, a:focus {
 	text-decoration:  none;
     word-break: break-all;
-    color: lighten($padrao,10%);
+    color: darken($padrao,5%);
     @extend %transicao;
 
     article p & {
@@ -87,6 +87,8 @@ a, a:link, a:visited, a:active, a:focus {
 .ocultar {
     visibility: hidden;
 }
+
+
 
 // paginacao
 span.pagina {
