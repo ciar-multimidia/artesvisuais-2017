@@ -71,12 +71,12 @@ $fonte-padrao: 'Roboto',sans-serif;
 // formatacoes
 a, a:link, a:visited, a:active, a:focus {
 	text-decoration:  none;
-    word-break: break-all;
     color: darken($padrao,5%);
     @extend %transicao;
 
     article p & {
         box-shadow: inset 0 -4px 0 transparentize($padrao,0.8);
+        word-break: break-all;
 
         &:hover {
             box-shadow: inset 0 -4px 0 transparentize($padrao,0.65);
@@ -88,6 +88,10 @@ a, a:link, a:visited, a:active, a:focus {
     visibility: hidden;
 }
 
+
+.esconder {
+    display: none;
+}
 
 
 // paginacao

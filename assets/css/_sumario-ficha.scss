@@ -8,7 +8,6 @@
     & > div {
     	@include flex-basis(calc(50% - 20px));
     	margin: 0 0 40px;
-		background: transparentize(white,0.3);
 		position: relative;
 
     	h2 {

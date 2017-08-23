@@ -1,21 +1,21 @@
 body.portal {
 	background: transparent url('../img/bgportal.jpg') center center no-repeat fixed / cover;
 
-	#topo, #rodape {
-		.container {width: calc(100% - 40px);}
-	}
+	// #topo, #rodape {
+	// 	.container {width: calc(100% - 40px);}
+	// }
 	
 	section {
-		width: 100%;
+		// width: 100%;
 		padding: 0 0 50px;
 		
 	    @include display(flex);
 	    @include flex-direction(row);
 	    @include flex-wrap(wrap);
-	    @include justify-content(space-between);   
+	    @include justify-content(flex-start);   
 
 	    .modulo {
-	    	width: calc(25% - 20px);
+	    	width: calc(33.3333333% - 20px);
 	    	background: transparentize(#fff,0.4);
 	    	margin: 10px; 
 	    	padding: 15px;
@@ -23,18 +23,18 @@ body.portal {
 	    	font-size: 0.95em;
 	    	// border-left: 4px solid $padrao;
 
-	    	h2 {margin-top: 0;}
+	    	h2 {margin: 0;}
 
 			ul {
 				list-style-type: none;
-				margin: 0;
+				margin: 25px 0 0 0;
 				padding: 0;
 
 				li {
 					padding: 0 0 10px;
 
 					&:before {
-						background: $eixo1;
+						background: $padrao;
 						width: 12px;
 						height: 6px;
 						margin-right: 6px;
@@ -50,6 +50,8 @@ body.portal {
 					&.eixo3:before {background: $eixo3;}
 					&.eixo4:before {background: $eixo4;}
 				}
+
+				ul {margin: 0 0 0 25px;}
 			}
 
 			&.desabilitado {

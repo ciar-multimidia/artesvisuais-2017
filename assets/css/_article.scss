@@ -17,6 +17,26 @@ article {
 			margin-top: 0;
 		}	
 	}
+
+
+	h1 {
+		&[class^="eixo"]:after {
+			display: inline-block;
+			// font-weight: normal;
+			font-size: 12px;
+			text-transform: uppercase;
+			margin-left: 10px;
+			font-family: $fonte-padrao;
+		}
+		// &.eixo1:before {content: "\25CF \0020 Eixo 1: Produ\00E7\00E3o e Cria\00E7\00E3o Art\00EDstico-Visual (PCA)"; color: $eixo1}
+		// &.eixo2:before {content: "\25CF \0020 Eixo 2: Fundamenta\00E7\00E3o Hist\00F3rica e Sociocultural em Artes Visuais (FHS)"; color: $eixo2}
+		// &.eixo3:before {content: "\25CF \0020 Eixo 3: Fundamenta\00E7\00E3o S\00F3cio-hist\00F3rica e Pedag\00F3gica das Artes Visuais na Educa\00E7\00E3o (FSP)"; color: $eixo3}
+		// &.eixo4:before {content: "\25CF \0020 Eixo 4: Pesquisa, Est\00E1gio e Pr\00E1tica Pedag\00F3gica em Artes Visuais (PEP)"; color: $eixo4}
+		&.eixo1:after {content: "\25CF \0020 Eixo 1"; color: $eixo1}
+		&.eixo2:after {content: "\25CF \0020 Eixo 2"; color: $eixo2}
+		&.eixo3:after {content: "\25CF \0020 Eixo 3"; color: $eixo3}
+		&.eixo4:after {content: "\25CF \0020 Eixo 4"; color: $eixo4}
+	}
 	
 	// Estilo basico dos autores
 	.autores{

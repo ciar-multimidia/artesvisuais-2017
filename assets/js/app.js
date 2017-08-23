@@ -133,6 +133,11 @@ jQuery(document).ready(function($) {
 
 	
 
+	// acordion saiba mais
+	$('.complementar > a').click(function(){
+		$(this).parent().find('.mostralista').slideToggle("slow");
+	});
+
 
 
 });

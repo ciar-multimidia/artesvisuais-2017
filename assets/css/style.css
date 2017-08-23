@@ -425,15 +425,18 @@ a, a:link, a:visited, a:active, a:focus {
 
 a, a:link, a:visited, a:active, a:focus {
   text-decoration: none;
-  word-break: break-all;
   color: #484848; }
   article p a, article p a:link, article p a:visited, article p a:active, article p a:focus {
-    box-shadow: inset 0 -4px 0 rgba(85, 85, 85, 0.2); }
+    box-shadow: inset 0 -4px 0 rgba(85, 85, 85, 0.2);
+    word-break: break-all; }
     article p a:hover, article p a:link:hover, article p a:visited:hover, article p a:active:hover, article p a:focus:hover {
       box-shadow: inset 0 -4px 0 rgba(85, 85, 85, 0.35); }
 
 .ocultar {
   visibility: hidden; }
+
+.esconder {
+  display: none; }
 
 span.pagina {
   display: block;
@@ -1127,12 +1130,12 @@ body {
           font-weight: bold;
           text-transform: uppercase; }
         #topo .container a.marca span.modalidade {
-          font-size: 1.0em;
+          font-size: 1.2em;
           font-family: "Jaldi", sans-serif;
           text-transform: uppercase;
           letter-spacing: 0.1em; }
-        #topo .container a.marca span.volume {
-          font-size: 1.4em;
+        #topo .container a.marca span.modulo {
+          font-size: 0.9em;
           font-family: "Jaldi", sans-serif;
           text-transform: uppercase;
           letter-spacing: 0.05em; }
@@ -1214,6 +1217,24 @@ article {
     margin-top: 1em; }
     article > *:first-child {
       margin-top: 0; }
+  article h1[class^="eixo"]:after {
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-left: 10px;
+    font-family: "Roboto", sans-serif; }
+  article h1.eixo1:after {
+    content: "\25CF \0020 Eixo 1";
+    color: #5B1980; }
+  article h1.eixo2:after {
+    content: "\25CF \0020 Eixo 2";
+    color: #E75A19; }
+  article h1.eixo3:after {
+    content: "\25CF \0020 Eixo 3";
+    color: #C70051; }
+  article h1.eixo4:after {
+    content: "\25CF \0020 Eixo 4";
+    color: #0090B6; }
   article .autores {
     padding: 20px 26px;
     display: inline-block;
@@ -1539,10 +1560,7 @@ article {
 
 body.portal {
   background: transparent url("../img/bgportal.jpg") center center no-repeat fixed/cover; }
-  body.portal #topo .container, body.portal #rodape .container {
-    width: calc(100% - 40px); }
   body.portal section {
-    width: 100%;
     padding: 0 0 50px;
     display: -webkit-box;
     display: -moz-box;
@@ -1568,32 +1586,32 @@ body.portal {
     -moz-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -moz-box-pack: justify;
-    box-pack: justify;
-    -webkit-justify-content: space-between;
-    -moz-justify-content: space-between;
-    -ms-justify-content: space-between;
-    -o-justify-content: space-between;
-    justify-content: space-between;
-    -ms-flex-pack: justify; }
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -o-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start; }
     body.portal section .modulo {
-      width: calc(25% - 20px);
+      width: calc(33.3333333% - 20px);
       background: rgba(255, 255, 255, 0.6);
       margin: 10px;
       padding: 15px;
       position: relative;
       font-size: 0.95em; }
       body.portal section .modulo h2 {
-        margin-top: 0; }
+        margin: 0; }
       body.portal section .modulo ul {
         list-style-type: none;
-        margin: 0;
+        margin: 25px 0 0 0;
         padding: 0; }
         body.portal section .modulo ul li {
           padding: 0 0 10px; }
           body.portal section .modulo ul li:before {
-            background: #5B1980;
+            background: #555;
             width: 12px;
             height: 6px;
             margin-right: 6px;
@@ -1610,6 +1628,8 @@ body.portal {
             background: #C70051; }
           body.portal section .modulo ul li.eixo4:before {
             background: #0090B6; }
+        body.portal section .modulo ul ul {
+          margin: 0 0 0 25px; }
       body.portal section .modulo.desabilitado {
         background: rgba(255, 255, 255, 0.4); }
         body.portal section .modulo.desabilitado * {
@@ -1669,7 +1689,6 @@ body.portal {
     flex-basis: calc(50% - 20px);
     -ms-flex-preferred-size: calc(50% - 20px);
     margin: 0 0 40px;
-    background: rgba(255, 255, 255, 0.7);
     position: relative; }
     .duascol > div h2 {
       text-transform: uppercase;
