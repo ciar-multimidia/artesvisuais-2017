@@ -17,6 +17,28 @@ body {
 @import 'custom.fancybox';
 @import 'cabecalho';
 @import 'article';
-@import 'rodape';
+
+
+.apresenta-eixo {
+	background: transparentize(#fff,0.4);
+	margin: 10px; 
+	padding: 15px;
+	position: relative;
+	font-size: 0.95em;
+
+	h2 {
+		margin-top: 0;
+
+		span {font-size: 0.7em; display: block;}
+	}
+
+	&.eixo1 h2 {color: $eixo1}
+	&.eixo2 h2 {color: $eixo2}
+	&.eixo3 h2 {color: $eixo3}
+	&.eixo4 h2 {color: $eixo4}
+}
+
+
 @import 'portal';
 @import 'sumario-ficha';
+@import 'rodape';

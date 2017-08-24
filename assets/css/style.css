@@ -1500,81 +1500,25 @@ article {
       article div.nota-rodape div.texto p:first-child {
         margin-top: 0; }
 
-#rodape {
-  width: 100%;
-  padding: 10px 0;
-  background: transparent url("../img/bgteste.jpg") center center no-repeat/cover;
-  position: fixed;
-  color: #fff;
-  z-index: 5;
-  bottom: 0; }
-  #rodape a {
-    color: inherit; }
-  #rodape .container {
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    box-direction: normal;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-direction: row;
-    -webkit-box-lines: multiple;
-    -moz-box-lines: multiple;
-    box-lines: multiple;
-    -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -moz-box-pack: justify;
-    box-pack: justify;
-    -webkit-justify-content: space-between;
-    -moz-justify-content: space-between;
-    -ms-justify-content: space-between;
-    -o-justify-content: space-between;
-    justify-content: space-between;
-    -ms-flex-pack: justify;
-    font-size: 1.1em;
-    position: relative;
-    text-transform: uppercase;
-    font-family: "Jaldi", sans-serif; }
-    #rodape .container a.proximo:after, #rodape .container a.proximo:before, #rodape .container a.anterior:after, #rodape .container a.anterior:before {
-      text-shadow: 2px 2px 0 #000; }
-    #rodape .container a.anterior:before {
-      content: '\2039';
-      font-size: 35px;
-      line-height: 0;
-      display: inline-block;
-      vertical-align: sub;
-      margin: 0 20px 0 0; }
-    #rodape .container a.proximo:after {
-      content: '\203A';
-      font-size: 35px;
-      line-height: 0;
-      display: inline-block;
-      vertical-align: sub;
-      margin: 0 0 0 20px; }
-    #rodape .container .btn-subir {
-      position: absolute;
-      top: -50px;
-      right: 0;
-      display: block;
-      text-align: center;
-      color: #555; }
-      #rodape .container .btn-subir:before {
-        content: '\2303';
-        display: block;
-        line-height: 0; }
+.apresenta-eixo {
+  background: rgba(255, 255, 255, 0.6);
+  margin: 10px;
+  padding: 15px;
+  position: relative;
+  font-size: 0.95em; }
+  .apresenta-eixo h2 {
+    margin-top: 0; }
+    .apresenta-eixo h2 span {
+      font-size: 0.7em;
+      display: block; }
+  .apresenta-eixo.eixo1 h2 {
+    color: #5B1980; }
+  .apresenta-eixo.eixo2 h2 {
+    color: #E75A19; }
+  .apresenta-eixo.eixo3 h2 {
+    color: #C70051; }
+  .apresenta-eixo.eixo4 h2 {
+    color: #0090B6; }
 
 body.portal {
   background: transparent url("../img/bgportal.jpg") center center no-repeat fixed/cover; }
@@ -1755,5 +1699,81 @@ body.portal {
       text-align: center;
       display: block;
       margin: 0 auto; }
+
+#rodape {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent url("../img/bgteste.jpg") center center no-repeat/cover;
+  position: fixed;
+  color: #fff;
+  z-index: 5;
+  bottom: 0; }
+  #rodape a {
+    color: inherit; }
+  #rodape .container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    font-size: 1.1em;
+    position: relative;
+    text-transform: uppercase;
+    font-family: "Jaldi", sans-serif; }
+    #rodape .container a.proximo:after, #rodape .container a.proximo:before, #rodape .container a.anterior:after, #rodape .container a.anterior:before {
+      text-shadow: 2px 2px 0 #000; }
+    #rodape .container a.anterior:before {
+      content: '\2039';
+      font-size: 35px;
+      line-height: 0;
+      display: inline-block;
+      vertical-align: sub;
+      margin: 0 20px 0 0; }
+    #rodape .container a.proximo:after {
+      content: '\203A';
+      font-size: 35px;
+      line-height: 0;
+      display: inline-block;
+      vertical-align: sub;
+      margin: 0 0 0 20px; }
+    #rodape .container .btn-subir {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      display: block;
+      text-align: center;
+      color: #555; }
+      #rodape .container .btn-subir:before {
+        content: '\2303';
+        display: block;
+        line-height: 0; }
 
 /*# sourceMappingURL=style.css.map */
