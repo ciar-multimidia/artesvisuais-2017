@@ -1229,7 +1229,8 @@ article {
   align-items: center;
   -ms-flex-align: center;
   position: relative;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8); }
   article > * {
     width: 720px;
     margin-top: 1em; }
@@ -1314,6 +1315,16 @@ article {
       width: 100%; }
       article blockquote > *:first-child {
         margin-top: 0; }
+  article .caixa {
+    background: transparent url("../img/bgportal.jpg") center center no-repeat fixed/cover;
+    padding: 20px 26px;
+    display: inline-block;
+    width: 720px;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 1em; }
+    article .caixa h2, article .caixa h3, article .caixa h4, article .caixa h5 {
+      margin-top: 0; }
   article table {
     text-align: left;
     width: auto;
@@ -1327,7 +1338,7 @@ article {
         max-width: 960px; } }
     article table th, article table td {
       background: #f7f7f7;
-      padding: 0 20px; }
+      padding: 10px 20px; }
     article table caption {
       font-size: 0.9em;
       line-height: 1.2;

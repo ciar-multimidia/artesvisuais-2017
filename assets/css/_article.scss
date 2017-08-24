@@ -7,6 +7,7 @@ article {
 	@include align-items(center);
 	position: relative;
 	overflow-x: hidden;
+	text-shadow: 1px 1px 1px transparentize(#fff,0.2);
 
 	// estilo padrao para os filhos do Article. Alguns elementos sobrepoem esse estilo de forma individual logo abaixo.
 	$margem: 1em;
@@ -110,6 +111,19 @@ article {
 		}
 	}
 
+
+	.caixa {
+		background: transparent url('../img/bgportal.jpg') center center no-repeat fixed / cover;
+		padding: 20px 26px;
+		display: inline-block;
+		width: $largura-minima;
+		text-align: left;
+		margin-top: 2em;
+		margin-bottom: 1em;
+
+		h2, h3, h4, h5 {margin-top: 0;}
+	}
+
 	// Estilo de tabelas
 	
 	table{
@@ -120,7 +134,7 @@ article {
 		th, td{
 			// border: 1px solid black;
 			background: hsl(0,0, 97%);
-			padding: 0 20px;
+			padding: 10px 20px;
 		}
 
 		caption{
