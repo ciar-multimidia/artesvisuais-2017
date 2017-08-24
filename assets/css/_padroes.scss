@@ -68,6 +68,17 @@ $fonte-padrao: 'Roboto',sans-serif;
 	position: relative;
 }
 
+
+// titulos
+h1 {font-size: 2em}
+h2 {font-size: 1.65em}
+h3 {font-size: 1.4em}
+h4 {font-size: 1.28em}
+h5 {font-size: 1.15em}
+h6 {font-size: 1.05em}
+
+
+
 // formatacoes
 a, a:link, a:visited, a:active, a:focus {
 	text-decoration:  none;
