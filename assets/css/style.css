@@ -456,6 +456,12 @@ a, a:link, a:visited, a:active, a:focus {
 .esconder {
   display: none; }
 
+hr {
+  width: 100%;
+  height: 8px;
+  background: transparent url("../img/bg2.jpg") center center no-repeat/cover;
+  border: 0; }
+
 span.pagina {
   display: block;
   width: 100%;
@@ -1122,7 +1128,7 @@ body {
   width: 100%;
   height: 135px;
   color: #fff;
-  background: transparent url("../img/bgteste.jpg") center center no-repeat/cover; }
+  background: transparent url("../img/bg.jpg") center center no-repeat/cover; }
   #topo .container {
     height: 135px; }
     #topo .container a.marca {
@@ -1714,7 +1720,7 @@ body.portal {
 #rodape {
   width: 100%;
   padding: 10px 0;
-  background: transparent url("../img/bgteste.jpg") center center no-repeat/cover;
+  background: transparent url("../img/bg.jpg") center center no-repeat/cover;
   position: fixed;
   color: #fff;
   z-index: 5;

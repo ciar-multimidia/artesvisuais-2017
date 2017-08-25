@@ -95,6 +95,8 @@ a, a:link, a:visited, a:active, a:focus {
     }
 }
 
+
+// ocultar e esconder itens
 .ocultar {
     visibility: hidden;
 }
@@ -102,6 +104,15 @@ a, a:link, a:visited, a:active, a:focus {
 
 .esconder {
     display: none;
+}
+
+
+// linha horizontal
+hr {
+    width: 100%;
+    height: 8px;
+    background: transparent url('../img/bg2.jpg') center center no-repeat / cover;
+    border: 0; 
 }
 
 
