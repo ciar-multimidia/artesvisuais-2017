@@ -1263,7 +1263,7 @@ article {
   article .autores {
     padding: 20px 26px;
     display: inline-block;
-    background: #F2F2F2;
+    background: #eeeeee;
     width: 720px;
     text-align: left;
     margin-top: 2em;
@@ -1379,6 +1379,7 @@ article {
     display: inline-block;
     vertical-align: top;
     text-align: center;
+    background: #eeeeee;
     cursor: pointer; }
     article span.numero-rodape:before {
       content: attr(data-numero);
@@ -1419,13 +1420,12 @@ article {
       transform: translateX(2px); }
     article div.nota-rodape .posrel {
       line-height: 1.4em;
-      border-width: 1px;
-      border-left-width: 1px;
-      border-style: solid;
+      border: 1px solid #5B1980;
+      border-right: 0;
       position: relative;
       width: 100%;
       height: 100%;
-      padding: 32px 28px 14px;
+      padding: 14px 28px;
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -1486,6 +1486,9 @@ article {
       margin: 0;
       display: inline-block;
       text-align: center;
+      background: #C70051;
+      color: #fff;
+      text-shadow: 1px 1px 1px #8a0038;
       vertical-align: middle;
       display: -webkit-box;
       display: -moz-box;
@@ -1520,7 +1523,7 @@ article {
 .apresenta-eixo {
   background: rgba(255, 255, 255, 0.6);
   margin: 10px;
-  padding: 15px;
+  padding: 35px;
   position: relative;
   font-size: 0.95em; }
   .apresenta-eixo h2 {
