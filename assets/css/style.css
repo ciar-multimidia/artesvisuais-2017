@@ -1543,6 +1543,7 @@ article {
 body.portal {
   background: transparent url("../img/bgportal.jpg") center center no-repeat fixed/cover;
   height: 100vh;
+  overflow: hidden;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -1578,6 +1579,7 @@ body.portal {
     height: 100%;
     margin: 0;
     padding: 0;
+    background: rgba(255, 255, 255, 0.6);
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -1602,42 +1604,125 @@ body.portal {
     -moz-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-box-pack: start;
-    -moz-box-pack: start;
-    box-pack: start;
-    -webkit-justify-content: flex-start;
-    -moz-justify-content: flex-start;
-    -ms-justify-content: flex-start;
-    -o-justify-content: flex-start;
-    justify-content: flex-start;
-    -ms-flex-pack: start; }
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center; }
     body.portal section.modulo-ativo .modulo {
       width: 7.5%; }
+      body.portal section.modulo-ativo .modulo h2 {
+        opacity: 0.3; }
       body.portal section.modulo-ativo .modulo.ativo {
+        -webkit-flex-shrink: 0;
+        -moz-flex-shrink: 0;
+        flex-shrink: 0;
+        -ms-flex-negative: 0;
         width: 50%; }
+        body.portal section.modulo-ativo .modulo.ativo:not(:first-child) {
+          border-left: 1px solid #5B1980; }
+        body.portal section.modulo-ativo .modulo.ativo + .modulo {
+          border-left: 1px solid #5B1980; }
+        body.portal section.modulo-ativo .modulo.ativo:before {
+          content: none; }
+        body.portal section.modulo-ativo .modulo.ativo .box {
+          padding: 0 50px; }
+        body.portal section.modulo-ativo .modulo.ativo h2 {
+          opacity: 1; }
+        body.portal section.modulo-ativo .modulo.ativo ul {
+          display: block; }
     body.portal section .modulo {
       -webkit-flex-shrink: 1;
       -moz-flex-shrink: 1;
       flex-shrink: 1;
       -ms-flex-negative: 1;
       width: 12.5%;
-      -webkit-transition: width 0.2s ease-in-out;
-      -moz-transition: width 0.2s ease-in-out;
-      transition: width 0.2s ease-in-out;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      -webkit-transition-property: width, border-left;
+      -moz-transition-property: width, border-left;
+      transition-property: width, border-left;
       height: 100%;
-      background: rgba(255, 255, 255, 0.6);
       margin: 0px;
-      padding: 0px;
-      border-right: 1px solid #b3b3b3;
+      padding: 40px 0px 100px;
+      border-left: 1px solid #b3b3b3;
+      overflow-y: scroll;
       position: relative;
       font-size: 0.95em; }
-      body.portal section .modulo:last-child {
-        border-right: none; }
-      body.portal section .modulo.ativo {
-        width: 50%; }
+      body.portal section .modulo:first-child {
+        border-left: none; }
+      body.portal section .modulo:before {
+        z-index: 1;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        height: 100%;
+        background-position: right bottom;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        opacity: 0;
+        -webkit-transform: translateX(50px);
+        -moz-transform: translateX(50px);
+        -ms-transform: translateX(50px);
+        -o-transform: translateX(50px);
+        transform: translateX(50px);
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        -webkit-transition-property: -webkit-transform, opacity;
+        -moz-transition-property: -moz-transform, opacity;
+        transition-property: transform, opacity; }
+      body.portal section .modulo:nth-child(4n-0):before {
+        background-image: url(../img/ilustra1.png); }
+      body.portal section .modulo:nth-child(4n-1):before {
+        background-image: url(../img/ilustra2.png); }
+      body.portal section .modulo:nth-child(4n-2):before {
+        background-image: url(../img/ilustra3.png); }
+      body.portal section .modulo:nth-child(4n-3):before {
+        background-image: url(../img/ilustra4.png); }
+      body.portal section .modulo:not(.ativo):hover {
+        cursor: pointer; }
+        body.portal section .modulo:not(.ativo):hover:before {
+          opacity: 1;
+          -webkit-transform: translateX(0px);
+          -moz-transform: translateX(0px);
+          -ms-transform: translateX(0px);
+          -o-transform: translateX(0px);
+          transform: translateX(0px); }
+        body.portal section .modulo:not(.ativo):hover h2 {
+          opacity: 1; }
+      body.portal section .modulo .box {
+        z-index: 2;
+        padding: 0 20px;
+        -webkit-transition: padding 0.5s ease-in-out;
+        -moz-transition: padding 0.5s ease-in-out;
+        transition: padding 0.5s ease-in-out; }
       body.portal section .modulo h2 {
-        margin: 0; }
+        display: inline-block;
+        font-family: "Jaldi", sans-serif;
+        margin: 0;
+        font-size: 48px;
+        line-height: 1;
+        opacity: 1;
+        -webkit-transition: opacity 0.2s linear;
+        -moz-transition: opacity 0.2s linear;
+        transition: opacity 0.2s linear; }
+        body.portal section .modulo h2 span {
+          display: block;
+          font-weight: normal;
+          font-size: 16px; }
       body.portal section .modulo ul {
+        -webkit-transition: display 0s linear 0.5s;
+        -moz-transition: display 0s linear 0.5s;
+        transition: display 0s linear 0.5s;
+        display: none;
         list-style-type: none;
         margin: 25px 0 0 0;
         padding: 0; }
@@ -1645,12 +1730,17 @@ body.portal {
           padding: 0 0 10px; }
           body.portal section .modulo ul li:before {
             background: #555;
-            width: 12px;
+            width: 6px;
             height: 6px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
             margin-right: 6px;
-            border-radius: 6px;
             content: "";
-            display: inline-block; }
+            display: inline-block;
+            vertical-align: middle; }
           body.portal section .modulo ul li a:hover {
             text-decoration: underline; }
           body.portal section .modulo ul li.eixo1:before {
