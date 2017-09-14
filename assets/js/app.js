@@ -1,15 +1,15 @@
 jQuery(document).ready(function($) {
 
-	$('#rodape > .container').append('<a href="#subir" class="btn-subir">subir</a>');
-	$('a.btn-subir').on('click', function(){
-	  $('html, body').animate({scrollTop:0},1100);
-	  return false;
-	});
+	if ($('#rodape').attr('data-bt-subir') !== 'false') {
+		$('#rodape > .container').append('<a href="#subir" class="btn-subir">subir</a>');
+		$('a.btn-subir').on('click', function(){
+		  $('html, body').animate({scrollTop:0},1100);
+		  return false;
+		});	
+	}
 
-	$('article').on('click', function(event) {
-		console.log(event.pageY- $(this).offset().top);
-		/* Act on the event */
-	});
+	
+
 
 	var notasrodape = $('.nota-rodape');
 	var btrodape = $('.numero-rodape');

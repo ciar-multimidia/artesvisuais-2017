@@ -1,23 +1,59 @@
 body.portal {
 	background: transparent url('../img/bgportal.jpg') center center no-repeat fixed / cover;
+	height: 100vh;
+	@include display(flex);
+	@include flex-direction(column);
+
+	#topo{
+		@include flex-shrink(0);
+	}
+
+	#rodape{
+		@include flex-shrink(0);
+		position: static;
+		bottom: auto;
+	}
 	
 	section {
-		// width: 100%;
-		padding: 0 0 50px;
+		width: 100%;
+		max-width: none;
+		height: 100%;
+		margin: 0;
+		padding: 0;
 		
 	    @include display(flex);
 	    @include flex-direction(row);
-	    @include flex-wrap(wrap);
-	    @include justify-content(flex-start);   
+	    @include flex-wrap(nowrap);
+	    @include justify-content(flex-start);
+
+	    &.modulo-ativo{
+	    	.modulo{
+	    		width: 7.5%;
+	    		&.ativo{
+	    			width: 50%;
+	    		}
+	    	}
+	    }   
 
 	    .modulo {
-	    	width: calc(33.3333333% - 20px);
+    		@include  flex-shrink(1);
+	    	width: 12.5%;
+	    	@include transition(width 0.2s ease-in-out);
+	    	height: 100%;
 	    	background: transparentize(#fff,0.4);
-	    	margin: 10px; 
-	    	padding: 15px;
+	    	margin: 0px; 
+	    	padding: 0px;
+	    	border-right: 1px solid hsl(0,0,70%);
+	    	&:last-child{
+	    		border-right: none
+	    	}
 	    	position: relative;
 	    	font-size: 0.95em;
 	    	// border-left: 4px solid $padrao;
+
+	    	&.ativo{
+	    		width: 50%;
+	    	}
 
 	    	h2 {margin: 0;}
 
