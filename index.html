@@ -19,10 +19,10 @@
 </header>
 
 
-<section class="container">
+<section class="container modulo-ativo">
 	<!-- (div.modulo>div.box>h2>span{Percurso}+{$}^+ul)*8 -->
 
-	<div class="modulo">
+	<div class="modulo ativo db-lista">
 		<div class="box">
 			<h2><span>Percurso</span>1</h2>
 			<ul>
@@ -54,7 +54,7 @@
 
 
 
-	<div class="modulo">
+	<div class="modulo desabilitado">
 		<div class="box">
 			<h2><span>Percurso</span>2</h2>
 			<ul>
@@ -72,7 +72,7 @@
 
 
 
-	<div class="modulo">
+	<div class="modulo desabilitado">
 		<div class="box">
 			<h2><span>Percurso</span>3</h2>
 			<ul>
@@ -91,7 +91,7 @@
 
 
 
-	<div class="modulo">
+	<div class="modulo desabilitado">
 		<div class="box">
 			<h2><span>Percurso</span>4</h2>
 			<ul>
@@ -109,7 +109,7 @@
 
 
 
-	<div class="modulo">
+	<div class="modulo desabilitado">
 		<div class="box">
 			<h2><span>Percurso</span>5</h2>
 			<ul>
@@ -126,7 +126,7 @@
 
 
 
-	<div class="modulo">
+	<div class="modulo desabilitado">
 		<div class="box">
 			<h2><span>Percurso</span>6</h2>
 			<ul>
@@ -144,7 +144,7 @@
 
 
 
-	<div class="modulo">
+	<div class="modulo desabilitado">
 		<div class="box">
 			<h2><span>Percurso</span>7</h2>
 			<ul>
@@ -159,7 +159,7 @@
 
 
 
-	<div class="modulo">
+	<div class="modulo desabilitado">
 		<div class="box">
 			<h2><span>Percurso</span>8</h2>
 			<ul>
@@ -189,11 +189,19 @@
 <!-- <script src="assets/js/app.js" type="text/javascript"></script> -->
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
+
+		var transitionendPrefixed = 'transitionend webkitTransitionEnd oTransitionEnd otransitionend';
+
 		var section = $('section').eq(0);
 		var modulos = section.children('.modulo');
 		modulos.on('click', function(event) {
-			modulos.removeClass('ativo');
-			$(this).addClass('ativo').parent().addClass('modulo-ativo');
+			if (!$(this).hasClass('ativo') && !$(this).hasClass('desabilitado')) {
+				modulos.removeClass('ativo db-lista');
+				$(this).addClass('ativo').parent().addClass('modulo-ativo');
+				$(this).on(transitionendPrefixed, function(event) {
+					$(this).addClass('db-lista');
+				});
+			}
 		});
 
 		// acordion saiba mais

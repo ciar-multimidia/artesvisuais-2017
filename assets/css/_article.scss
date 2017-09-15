@@ -43,7 +43,7 @@ article {
 	.autores{
 				padding: 20px 26px;
 				display: inline-block;
-				background: lighten($padrao,60%);
+				background-color: lighten($padrao,60%);
 				width: $largura-minima;
 				// border: 1px solid black;
 				text-align: left;
@@ -113,7 +113,13 @@ article {
 
 
 	.caixa {
-		background: transparent url('../img/bgportal.jpg') center center no-repeat fixed / cover;
+		// background: transparent url('../img/bgportal.jpg') center center no-repeat fixed / cover;
+		background-color: transparent;
+		background-image: url('../img/bgportal.jpg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
 		padding: 20px 26px;
 		display: inline-block;
 		width: $largura-minima;
@@ -133,7 +139,7 @@ article {
 		min-width: $largura-minima;
 		th, td{
 			// border: 1px solid black;
-			background: hsl(0,0, 97%);
+			background-color: hsl(0,0, 97%);
 			padding: 10px 20px;
 		}
 
@@ -254,7 +260,7 @@ article {
 			margin: 0;
 			display: inline-block;
 			text-align: center;
-			background: $eixo3;
+			background-color: $eixo3;
 			color: #fff;
 			text-shadow: 1px 1px 1px darken($eixo3,12%);
 			vertical-align: middle;

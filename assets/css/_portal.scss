@@ -1,5 +1,9 @@
 body.portal {
-	background: transparent url('../img/bgportal.jpg') center center no-repeat fixed / cover;
+	// background: transparent url('../img/bgportal.jpg') center center no-repeat fixed / cover;
+	background-image: url('../img/bgportal.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 	height: 100vh;
 	overflow: hidden;
 	@include display(flex);
@@ -18,7 +22,8 @@ body.portal {
 	section {
 		width: 100%;
 		max-width: none;
-		height: 100%;
+		height: calc(100% - 185px);
+		max-height: 100%;
 		margin: 0;
 		padding: 0;
     	background: transparentize(#fff,0.4);
@@ -35,18 +40,17 @@ body.portal {
 	    	.modulo{
 	    		width: 7.5%;
 	    		h2{
-	    			opacity: 0.3;
+	    			opacity: 0.5;
 	    		}
-	    		&.ativo{
+	    		&:not(.desabilitado).ativo{
 		    		@include  flex-shrink(0);
 	    			width: 50%;
 	    			&:not(:first-child){
-		    			border-left: 1px solid $eixo1;    				
+		    			border-left-width: 3px;    				
 	    			}
 
 	    			& + .modulo{
-		    			border-left: 1px solid $eixo1;
-
+		    			border-left-width: 3px;
 	    			}
 
 	    			&:before{
@@ -61,10 +65,15 @@ body.portal {
 	    				opacity: 1;
 	    			}
 
-	    			ul{
-	    				display: block;
-	    			}
+		    		&.db-lista{
+		    			ul{
+		    				display: block;
+		    			}
+		    		}
+
 	    		}
+
+	    		
 	    	}
 	    } 
 
@@ -72,51 +81,67 @@ body.portal {
     		@include  flex-shrink(1);
 	    	width: 12.5%;
 	    	@include transition(all 0.5s ease-in-out);
-	    	@include transition-property(width, border-left);
+	    	@include transition-property(width, border-left-width);
 	    	height: 100%;
 	    	margin: 0px; 
 	    	padding: 40px 0px 100px;
 	    	border-left: 1px solid hsl(0,0,70%);
 	    	overflow-y: scroll;
+	    	overflow-x: hidden;
 	    	&:first-child{
 	    		border-left: none
 	    	}
 	    	position: relative;
 	    	font-size: 0.95em;
 
-	    	&:before{
-	    		z-index: 1;
-	    		content: '';
-	    		position: absolute;
-	    		top: 0; right: 0;
-	    		width: 50vw;
-	    		height: 100%;
-	    		background-position: right bottom;
-	    		background-size: auto 100%;
-	    		background-repeat: no-repeat;
-	    		opacity: 0;
-	    		@include transform(translateX(50px));
-	    		@include transition(all 0.4s ease-in-out);
-	    		@include transition-property(transform, opacity);
-	    	}
-
-	    	@for $i from 1 through 4 {
-    			&:nth-child(4n-#{$i - 1}):before{
-    				background-image: url(../img/ilustra#{$i}.png);
-    			}
-    		}	
-
-	    	&:not(.ativo):hover{
-	    		cursor: pointer;
-	    		&:before{
-	    			opacity: 1;
-		    		@include transform(translateX(0px));
-	    		}
-
+	    	&.desabilitado{
 	    		h2{
-	    			opacity: 1;
+	    			&:after{
+	    				display: block;
+	    				font-weight: normal;
+	    				content: 'Em breve';
+	    				font-size: 0.33333em;
+	    			}
 	    		}
 	    	}
+
+	    	&:not(.desabilitado){
+		    	&:before{
+		    		z-index: 1;
+		    		content: '';
+		    		position: absolute;
+		    		top: 0; right: 0;
+		    		width: 50vw;
+		    		height: 100%;
+		    		background-position: right bottom;
+		    		background-size: auto 100%;
+		    		background-repeat: no-repeat;
+		    		opacity: 0;
+		    		@include transform(translateX(50px));
+		    		@include transition(all 0.4s ease-in-out);
+		    		@include transition-property(transform, opacity);
+		    	}
+
+		    	@for $i from 1 through 4 {
+	    			&:nth-child(4n-#{$i - 1}):before{
+	    				background-image: url(../img/ilustra#{$i}.png);
+	    			}
+	    		}	
+
+		    	&:not(.ativo):hover{
+		    		cursor: pointer;
+		    		&:before{
+		    			opacity: 1;
+			    		@include transform(translateX(0px));
+		    		}
+
+		    		h2{
+		    			opacity: 1;
+		    		}
+		    	}
+	    	}
+
+	    	
 
 	    	.box{
 	    		z-index: 2;
@@ -129,19 +154,21 @@ body.portal {
 	    		font-family: $fonte-destaque;
 	    		margin: 0;
 	    		font-size: 48px;
+	    		@media screen and (min-width: 1400px){
+	    			font-size: 3vw;
+	    		}
 	    		line-height: 1;
 	    		opacity: 1;
 	    		@include transition(opacity 0.2s linear);
 	    		span{
 	    			display: block;
 	    			font-weight: normal;
-	    			font-size: 16px;
+	    			font-size: 0.3333333em;
 	    		}
 	    	}
 
 			ul {
 				
-				@include transition (display 0s linear 0.5s);
 				display: none;
 				list-style-type: none;
 				margin: 25px 0 0 0;
@@ -173,22 +200,7 @@ body.portal {
 				ul {margin: 0 0 0 25px;}
 			}
 
-			&.desabilitado {
-				background: transparentize(#fff,0.6);
-
-				* {color: lighten($padrao,40%) !important;}
-				
-				&:after {
-					width: 100%; height: 100%;
-					position: absolute;
-					content: "";
-					top: 0;
-					right: 0;
-					cursor: not-allowed;
-				}
-
-				ul li:before {background: lighten($padrao,40%)}
-			}
+		
 	    }
 
 	    

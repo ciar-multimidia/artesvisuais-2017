@@ -459,7 +459,10 @@ a, a:link, a:visited, a:active, a:focus {
 hr {
   width: 100%;
   height: 8px;
-  background: transparent url("../img/bg2.jpg") center center no-repeat/cover;
+  background-image: url("../img/bg2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border: 0; }
 
 span.pagina {
@@ -1128,7 +1131,10 @@ body {
   width: 100%;
   height: 135px;
   color: #fff;
-  background: transparent url("../img/bg.jpg") center center no-repeat/cover; }
+  background-image: url("../img/bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
   #topo .container {
     height: 135px; }
     #topo .container a.marca {
@@ -1263,7 +1269,7 @@ article {
   article .autores {
     padding: 20px 26px;
     display: inline-block;
-    background: #eeeeee;
+    background-color: #eeeeee;
     width: 720px;
     text-align: left;
     margin-top: 2em;
@@ -1322,7 +1328,12 @@ article {
       article blockquote > *:first-child {
         margin-top: 0; }
   article .caixa {
-    background: transparent url("../img/bgportal.jpg") center center no-repeat fixed/cover;
+    background-color: transparent;
+    background-image: url("../img/bgportal.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     padding: 20px 26px;
     display: inline-block;
     width: 720px;
@@ -1343,7 +1354,7 @@ article {
       article table {
         max-width: 960px; } }
     article table th, article table td {
-      background: #f7f7f7;
+      background-color: #f7f7f7;
       padding: 10px 20px; }
     article table caption {
       font-size: 0.9em;
@@ -1486,7 +1497,7 @@ article {
       margin: 0;
       display: inline-block;
       text-align: center;
-      background: #C70051;
+      background-color: #C70051;
       color: #fff;
       text-shadow: 1px 1px 1px #8a0038;
       vertical-align: middle;
@@ -1541,7 +1552,10 @@ article {
     color: #0090B6; }
 
 body.portal {
-  background: transparent url("../img/bgportal.jpg") center center no-repeat fixed/cover;
+  background-image: url("../img/bgportal.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   overflow: hidden;
   display: -webkit-box;
@@ -1576,7 +1590,8 @@ body.portal {
   body.portal section {
     width: 100%;
     max-width: none;
-    height: 100%;
+    height: calc(100% - 185px);
+    max-height: 100%;
     margin: 0;
     padding: 0;
     background: rgba(255, 255, 255, 0.6);
@@ -1616,24 +1631,24 @@ body.portal {
     body.portal section.modulo-ativo .modulo {
       width: 7.5%; }
       body.portal section.modulo-ativo .modulo h2 {
-        opacity: 0.3; }
-      body.portal section.modulo-ativo .modulo.ativo {
+        opacity: 0.5; }
+      body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo {
         -webkit-flex-shrink: 0;
         -moz-flex-shrink: 0;
         flex-shrink: 0;
         -ms-flex-negative: 0;
         width: 50%; }
-        body.portal section.modulo-ativo .modulo.ativo:not(:first-child) {
-          border-left: 1px solid #5B1980; }
-        body.portal section.modulo-ativo .modulo.ativo + .modulo {
-          border-left: 1px solid #5B1980; }
-        body.portal section.modulo-ativo .modulo.ativo:before {
+        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo:not(:first-child) {
+          border-left-width: 3px; }
+        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo + .modulo {
+          border-left-width: 3px; }
+        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo:before {
           content: none; }
-        body.portal section.modulo-ativo .modulo.ativo .box {
+        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo .box {
           padding: 0 50px; }
-        body.portal section.modulo-ativo .modulo.ativo h2 {
+        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo h2 {
           opacity: 1; }
-        body.portal section.modulo-ativo .modulo.ativo ul {
+        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo.db-lista ul {
           display: block; }
     body.portal section .modulo {
       -webkit-flex-shrink: 1;
@@ -1644,19 +1659,25 @@ body.portal {
       -webkit-transition: all 0.5s ease-in-out;
       -moz-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
-      -webkit-transition-property: width, border-left;
-      -moz-transition-property: width, border-left;
-      transition-property: width, border-left;
+      -webkit-transition-property: width, border-left-width;
+      -moz-transition-property: width, border-left-width;
+      transition-property: width, border-left-width;
       height: 100%;
       margin: 0px;
       padding: 40px 0px 100px;
       border-left: 1px solid #b3b3b3;
       overflow-y: scroll;
+      overflow-x: hidden;
       position: relative;
       font-size: 0.95em; }
       body.portal section .modulo:first-child {
         border-left: none; }
-      body.portal section .modulo:before {
+      body.portal section .modulo.desabilitado h2:after {
+        display: block;
+        font-weight: normal;
+        content: 'Em breve';
+        font-size: 0.33333em; }
+      body.portal section .modulo:not(.desabilitado):before {
         z-index: 1;
         content: '';
         position: absolute;
@@ -1679,24 +1700,24 @@ body.portal {
         -webkit-transition-property: -webkit-transform, opacity;
         -moz-transition-property: -moz-transform, opacity;
         transition-property: transform, opacity; }
-      body.portal section .modulo:nth-child(4n-0):before {
+      body.portal section .modulo:not(.desabilitado):nth-child(4n-0):before {
         background-image: url(../img/ilustra1.png); }
-      body.portal section .modulo:nth-child(4n-1):before {
+      body.portal section .modulo:not(.desabilitado):nth-child(4n-1):before {
         background-image: url(../img/ilustra2.png); }
-      body.portal section .modulo:nth-child(4n-2):before {
+      body.portal section .modulo:not(.desabilitado):nth-child(4n-2):before {
         background-image: url(../img/ilustra3.png); }
-      body.portal section .modulo:nth-child(4n-3):before {
+      body.portal section .modulo:not(.desabilitado):nth-child(4n-3):before {
         background-image: url(../img/ilustra4.png); }
-      body.portal section .modulo:not(.ativo):hover {
+      body.portal section .modulo:not(.desabilitado):not(.ativo):hover {
         cursor: pointer; }
-        body.portal section .modulo:not(.ativo):hover:before {
+        body.portal section .modulo:not(.desabilitado):not(.ativo):hover:before {
           opacity: 1;
           -webkit-transform: translateX(0px);
           -moz-transform: translateX(0px);
           -ms-transform: translateX(0px);
           -o-transform: translateX(0px);
           transform: translateX(0px); }
-        body.portal section .modulo:not(.ativo):hover h2 {
+        body.portal section .modulo:not(.desabilitado):not(.ativo):hover h2 {
           opacity: 1; }
       body.portal section .modulo .box {
         z-index: 2;
@@ -1714,14 +1735,14 @@ body.portal {
         -webkit-transition: opacity 0.2s linear;
         -moz-transition: opacity 0.2s linear;
         transition: opacity 0.2s linear; }
+        @media screen and (min-width: 1400px) {
+          body.portal section .modulo h2 {
+            font-size: 3vw; } }
         body.portal section .modulo h2 span {
           display: block;
           font-weight: normal;
-          font-size: 16px; }
+          font-size: 0.3333333em; }
       body.portal section .modulo ul {
-        -webkit-transition: display 0s linear 0.5s;
-        -moz-transition: display 0s linear 0.5s;
-        transition: display 0s linear 0.5s;
         display: none;
         list-style-type: none;
         margin: 25px 0 0 0;
@@ -1753,20 +1774,13 @@ body.portal {
             background: #0090B6; }
         body.portal section .modulo ul ul {
           margin: 0 0 0 25px; }
-      body.portal section .modulo.desabilitado {
-        background: rgba(255, 255, 255, 0.4); }
-        body.portal section .modulo.desabilitado * {
-          color: #bbbbbb !important; }
-        body.portal section .modulo.desabilitado:after {
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          content: "";
-          top: 0;
-          right: 0;
-          cursor: not-allowed; }
-        body.portal section .modulo.desabilitado ul li:before {
-          background: #bbbbbb; }
+
+body.sobre-o-curso {
+  background-image: url("../img/bgportal.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; }
 
 .duascol {
   -webkit-flex-basis: 100%;
@@ -1863,8 +1877,12 @@ body.portal {
 
 #rodape {
   width: 100%;
+  height: 50px;
   padding: 10px 0;
-  background: transparent url("../img/bg.jpg") center center no-repeat/cover;
+  background-image: url("../img/bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: fixed;
   color: #fff;
   z-index: 5;
