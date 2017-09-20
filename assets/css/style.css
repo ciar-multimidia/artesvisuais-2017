@@ -1594,7 +1594,6 @@ body.portal {
     max-height: 100%;
     margin: 0;
     padding: 0;
-    background: rgba(255, 255, 255, 0.6);
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -1628,40 +1627,19 @@ body.portal {
     -o-justify-content: center;
     justify-content: center;
     -ms-flex-pack: center; }
-    body.portal section.modulo-ativo .modulo {
-      width: 7.5%; }
-      body.portal section.modulo-ativo .modulo h2 {
-        opacity: 0.5; }
-      body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo {
-        -webkit-flex-shrink: 0;
-        -moz-flex-shrink: 0;
-        flex-shrink: 0;
-        -ms-flex-negative: 0;
-        width: 50%; }
-        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo:not(:first-child) {
-          border-left-width: 3px; }
-        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo + .modulo {
-          border-left-width: 3px; }
-        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo:before {
-          content: none; }
-        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo .box {
-          padding: 0 50px; }
-        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo h2 {
-          opacity: 1; }
-        body.portal section.modulo-ativo .modulo:not(.desabilitado).ativo.db-lista ul {
-          display: block; }
     body.portal section .modulo {
-      -webkit-flex-shrink: 1;
-      -moz-flex-shrink: 1;
-      flex-shrink: 1;
-      -ms-flex-negative: 1;
-      width: 12.5%;
+      background: rgba(255, 255, 255, 0.6);
+      -webkit-flex-grow: 1;
+      -moz-flex-grow: 1;
+      flex-grow: 1;
+      -ms-flex-positive: 1;
+      width: 7.5%;
       -webkit-transition: all 0.5s ease-in-out;
       -moz-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
-      -webkit-transition-property: width, border-left-width;
-      -moz-transition-property: width, border-left-width;
-      transition-property: width, border-left-width;
+      -webkit-transition-property: width, border-left-width, background-position;
+      -moz-transition-property: width, border-left-width, background-position;
+      transition-property: width, border-left-width, background-position;
       height: 100%;
       margin: 0px;
       padding: 40px 0px 100px;
@@ -1672,59 +1650,86 @@ body.portal {
       font-size: 0.95em; }
       body.portal section .modulo:first-child {
         border-left: none; }
-      body.portal section .modulo.desabilitado h2:after {
-        display: block;
-        font-weight: normal;
-        content: 'Em breve';
-        font-size: 0.33333em; }
-      body.portal section .modulo:not(.desabilitado):before {
-        z-index: 1;
+      body.portal section .modulo:before {
         content: '';
         position: absolute;
         top: 0;
-        right: 0;
+        right: -50px;
+        pointer-events: none;
         width: 50vw;
         height: 100%;
-        background-position: right bottom;
+        background-position: bottom right;
         background-size: auto 100%;
         background-repeat: no-repeat;
         opacity: 0;
-        -webkit-transform: translateX(50px);
-        -moz-transform: translateX(50px);
-        -ms-transform: translateX(50px);
-        -o-transform: translateX(50px);
-        transform: translateX(50px);
         -webkit-transition: all 0.4s ease-in-out;
         -moz-transition: all 0.4s ease-in-out;
         transition: all 0.4s ease-in-out;
-        -webkit-transition-property: -webkit-transform, opacity;
-        -moz-transition-property: -moz-transform, opacity;
-        transition-property: transform, opacity; }
-      body.portal section .modulo:not(.desabilitado):nth-child(4n-0):before {
+        -webkit-transition-property: opacity, right;
+        -moz-transition-property: opacity, right;
+        transition-property: opacity, right; }
+      body.portal section .modulo:nth-child(4n-0):before {
         background-image: url(../img/ilustra1.png); }
-      body.portal section .modulo:not(.desabilitado):nth-child(4n-1):before {
+      body.portal section .modulo:nth-child(4n-1):before {
         background-image: url(../img/ilustra2.png); }
-      body.portal section .modulo:not(.desabilitado):nth-child(4n-2):before {
+      body.portal section .modulo:nth-child(4n-2):before {
         background-image: url(../img/ilustra3.png); }
-      body.portal section .modulo:not(.desabilitado):nth-child(4n-3):before {
+      body.portal section .modulo:nth-child(4n-3):before {
         background-image: url(../img/ilustra4.png); }
-      body.portal section .modulo:not(.desabilitado):not(.ativo):hover {
-        cursor: pointer; }
-        body.portal section .modulo:not(.desabilitado):not(.ativo):hover:before {
-          opacity: 1;
-          -webkit-transform: translateX(0px);
-          -moz-transform: translateX(0px);
-          -ms-transform: translateX(0px);
-          -o-transform: translateX(0px);
-          transform: translateX(0px); }
-        body.portal section .modulo:not(.desabilitado):not(.ativo):hover h2 {
+      body.portal section .modulo:not(.desabilitado):hover h2 {
+        opacity: 1; }
+      body.portal section .modulo:not(.desabilitado):hover:before {
+        opacity: 1;
+        right: 0; }
+      body.portal section .modulo.desabilitado:before {
+        content: none; }
+      body.portal section .modulo.desabilitado a.anchor-modulo {
+        display: none; }
+      body.portal section .modulo.desabilitado h2 {
+        opacity: 0.3; }
+        body.portal section .modulo.desabilitado h2:after {
+          display: block;
+          font-weight: normal;
+          content: 'Em breve';
+          font-size: 0.33333em; }
+      body.portal section .modulo.desabilitado ul {
+        display: none; }
+      body.portal section .modulo:not(.desabilitado):target {
+        width: 50%; }
+        body.portal section .modulo:not(.desabilitado):target:before {
+          content: none; }
+        body.portal section .modulo:not(.desabilitado):target:not(:first-child) {
+          border-left-width: 5px; }
+        body.portal section .modulo:not(.desabilitado):target + .modulo {
+          border-left-width: 5px; }
+        body.portal section .modulo:not(.desabilitado):target a.anchor-modulo {
+          display: none; }
+        body.portal section .modulo:not(.desabilitado):target .box {
+          padding: 0 50px; }
+        body.portal section .modulo:not(.desabilitado):target div.itens {
+          opacity: 1; }
+        body.portal section .modulo:not(.desabilitado):target h2 {
+          opacity: 1; }
+        body.portal section .modulo:not(.desabilitado):target ul {
           opacity: 1; }
       body.portal section .modulo .box {
         z-index: 2;
         padding: 0 20px;
         -webkit-transition: padding 0.5s ease-in-out;
         -moz-transition: padding 0.5s ease-in-out;
-        transition: padding 0.5s ease-in-out; }
+        transition: padding 0.5s ease-in-out;
+        position: relative;
+        min-height: 100%; }
+      body.portal section .modulo a.anchor-modulo {
+        display: block;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 3; }
       body.portal section .modulo h2 {
         display: inline-block;
         font-family: "Jaldi", sans-serif;
@@ -1742,8 +1747,13 @@ body.portal {
           display: block;
           font-weight: normal;
           font-size: 0.3333333em; }
+      body.portal section .modulo div.itens {
+        opacity: 0; }
       body.portal section .modulo ul {
-        display: none;
+        opacity: 0;
+        -webkit-transition: opacity 0.2s linear 0.5s;
+        -moz-transition: opacity 0.2s linear 0.5s;
+        transition: opacity 0.2s linear 0.5s;
         list-style-type: none;
         margin: 25px 0 0 0;
         padding: 0; }

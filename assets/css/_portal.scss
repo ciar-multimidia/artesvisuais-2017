@@ -26,76 +26,73 @@ body.portal {
 		max-height: 100%;
 		margin: 0;
 		padding: 0;
-    	background: transparentize(#fff,0.4);
-
 		
 	    @include display(flex);
 	    @include flex-direction(row);
 	    @include flex-wrap(nowrap);
 	    @include justify-content(center);
 
-	    $numero-de-modulos: 8;
-
-	    &.modulo-ativo{
-	    	.modulo{
-	    		width: 7.5%;
-	    		h2{
-	    			opacity: 0.5;
-	    		}
-	    		&:not(.desabilitado).ativo{
-		    		@include  flex-shrink(0);
-	    			width: 50%;
-	    			&:not(:first-child){
-		    			border-left-width: 3px;    				
-	    			}
-
-	    			& + .modulo{
-		    			border-left-width: 3px;
-	    			}
-
-	    			&:before{
-	    				content: none;
-	    			}
-
-	    			.box{
-	    				padding: 0 50px;
-	    			}
-
-	    			h2{
-	    				opacity: 1;
-	    			}
-
-		    		&.db-lista{
-		    			ul{
-		    				display: block;
-		    			}
-		    		}
-
-	    		}
-
-	    		
-	    	}
-	    } 
-
 	    .modulo {
-    		@include  flex-shrink(1);
-	    	width: 12.5%;
+	    	background: transparentize(#fff,0.4);
+    		@include flex-grow(1);
+	    	width: 7.5%;
 	    	@include transition(all 0.5s ease-in-out);
-	    	@include transition-property(width, border-left-width);
+	    	@include transition-property(width, border-left-width, background-position);
 	    	height: 100%;
 	    	margin: 0px; 
 	    	padding: 40px 0px 100px;
 	    	border-left: 1px solid hsl(0,0,70%);
-	    	overflow-y: scroll;
-	    	overflow-x: hidden;
 	    	&:first-child{
 	    		border-left: none
 	    	}
+	    	overflow-y: scroll;
+	    	overflow-x: hidden;
+	    	
 	    	position: relative;
 	    	font-size: 0.95em;
 
-	    	&.desabilitado{
+	    	&:before{
+	    		content: '';
+	    		position: absolute;
+	    		top: 0; right: -50px;
+	    		pointer-events: none;
+	    		width: 50vw; height: 100%;
+	    		background-position: bottom right;
+		    	background-size: auto 100%;
+		    	background-repeat: no-repeat;
+		    	opacity: 0;
+		    	@include transition(all 0.4s ease-in-out);
+		    	@include transition-property(opacity, right);
+	    	}
+
+	    	@for $i from 1 through 4 {
+    			&:nth-child(4n-#{$i - 1}):before{
+    				background-image: url(../img/ilustra#{$i}.png);
+    			}
+    		}
+
+	    	&:not(.desabilitado):hover{
 	    		h2{
+	    			opacity: 1;
+	    		}
+	    		&:before{
+					opacity: 1;
+			    	right: 0;
+	    		}
+	    		
+	    	}
+
+	    	&.desabilitado{
+
+	    		&:before{
+	    			content: none;
+	    		}
+
+	    		a.anchor-modulo{
+	    			display: none;
+	    		}
+	    		h2{
+	    			opacity: 0.3;
 	    			&:after{
 	    				display: block;
 	    				font-weight: normal;
@@ -103,50 +100,67 @@ body.portal {
 	    				font-size: 0.33333em;
 	    			}
 	    		}
+
+	    		ul{
+	    			display: none;
+	    		}
 	    	}
 
-	    	&:not(.desabilitado){
-		    	&:before{
-		    		z-index: 1;
-		    		content: '';
-		    		position: absolute;
-		    		top: 0; right: 0;
-		    		width: 50vw;
-		    		height: 100%;
-		    		background-position: right bottom;
-		    		background-size: auto 100%;
-		    		background-repeat: no-repeat;
-		    		opacity: 0;
-		    		@include transform(translateX(50px));
-		    		@include transition(all 0.4s ease-in-out);
-		    		@include transition-property(transform, opacity);
+	    	&:not(.desabilitado):target{
+	    		&:before{
+	    			content: none;
+	    		}
+
+	    		&:not(:first-child){
+	    			border-left-width: 5px;    				
+    			}
+
+    			& + .modulo{
+	    			border-left-width: 5px;
+    			}
+
+	    		width: 50%;
+
+		    	a.anchor-modulo{
+		    		display: none;
 		    	}
 
-		    	@for $i from 1 through 4 {
-	    			&:nth-child(4n-#{$i - 1}):before{
-	    				background-image: url(../img/ilustra#{$i}.png);
-	    			}
-	    		}	
+	    		.box{
+	    			padding: 0 50px;
+	    		}
 
-		    	&:not(.ativo):hover{
-		    		cursor: pointer;
-		    		&:before{
-		    			opacity: 1;
-			    		@include transform(translateX(0px));
-		    		}
+	    		div.itens{
+		    		opacity: 1;
+	    		}
 
-		    		h2{
-		    			opacity: 1;
-		    		}
-		    	}
+	    		h2{
+	    			opacity: 1;
+	    		}
+
+    			ul{
+    				opacity: 1;
+    			}
+
 	    	}
 
-	    	
 
 	    	.box{
 	    		z-index: 2;
 	    		padding: 0 20px;
 	    		@include transition(padding 0.5s ease-in-out);
+	    		position: relative;
+	    		min-height: 100%;
+	    	}
+
+	    	a.anchor-modulo{
+	    		display: block;
+	    		margin: 0;
+	    		padding: 0;
+	    		position: absolute;
+	    		width: 100%;
+	    		height: 100%;
+	    		top: 0; left: 0;
+	    		z-index: 3;
 	    	}
 
 	    	h2 {
@@ -167,9 +181,13 @@ body.portal {
 	    		}
 	    	}
 
+	    	div.itens{
+	    		opacity: 0;
+	    	}
+
 			ul {
-				
-				display: none;
+				opacity: 0;
+				@include transition(opacity 0.2s linear 0.5s);
 				list-style-type: none;
 				margin: 25px 0 0 0;
 				padding: 0;
