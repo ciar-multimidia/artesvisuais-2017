@@ -1371,6 +1371,9 @@ article {
       article > figure {
         max-width: 960px; } }
     article > figure img {
+      display: block;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+      min-height: 50px;
       width: 100%;
       height: auto; }
     article > figure figcaption {
@@ -1939,6 +1942,9 @@ body.sobre-o-curso {
     font-family: "Jaldi", sans-serif; }
     #rodape .container a.proximo:after, #rodape .container a.proximo:before, #rodape .container a.anterior:after, #rodape .container a.anterior:before {
       text-shadow: 2px 2px 0 #000; }
+    #rodape .container a.proximo[disabled], #rodape .container a.anterior[disabled] {
+      opacity: 0;
+      pointer-events: none; }
     #rodape .container a.anterior:before {
       content: '\2039';
       font-size: 35px;

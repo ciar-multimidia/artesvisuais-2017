@@ -29,6 +29,10 @@
 	    	&:after,&:before {
 	    		text-shadow: 2px 2px 0 #000
 	    	}
+	    	&[disabled]{
+	    		opacity: 0;
+	    		pointer-events: none;
+	    	}
 	    }
 
 		a.anterior:before {content:'\2039';
