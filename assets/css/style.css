@@ -424,10 +424,11 @@ a, a:link, a:visited, a:active, a:focus {
   position: relative; }
 
 h1 {
-  font-size: 2em; }
+  font-size: 2.8em;
+  font-weight: normal; }
 
 h2 {
-  font-size: 1.65em; }
+  font-size: 1.8em; }
 
 h3 {
   font-size: 1.4em; }
@@ -1248,22 +1249,23 @@ article {
     margin-top: 1em; }
     article > *:first-child {
       margin-top: 0; }
-  article h1[class^="eixo"]:after {
-    display: inline-block;
+  article h1[class^="eixo"]:before {
+    display: block;
+    font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;
-    margin-left: 10px;
+    margin-bottom: 1em;
     font-family: "Roboto", sans-serif; }
-  article h1.eixo1:after {
+  article h1.eixo1:before {
     content: "\25CF \0020 Eixo 1";
     color: #5B1980; }
-  article h1.eixo2:after {
+  article h1.eixo2:before {
     content: "\25CF \0020 Eixo 2";
     color: #E75A19; }
-  article h1.eixo3:after {
+  article h1.eixo3:before {
     content: "\25CF \0020 Eixo 3";
     color: #C70051; }
-  article h1.eixo4:after {
+  article h1.eixo4:before {
     content: "\25CF \0020 Eixo 4";
     color: #0090B6; }
   article .autores {
@@ -1283,7 +1285,7 @@ article {
     font-size: 2em; }
   article > h1, article > h2, article > h3, article > h4, article > h5, article > h6 {
     margin-bottom: 0;
-    line-height: 1.2;
+    line-height: 1.1;
     width: 720px;
     font-family: "Jaldi", sans-serif; }
   article > p {
@@ -1347,10 +1349,15 @@ article {
       article .caixa figure.maior {
         width: 100%; }
   article table {
+    font-size: 0.9em;
     text-align: left;
     width: auto;
     max-width: 1320px;
-    min-width: 720px; }
+    min-width: 720px;
+    border-spacing: 0;
+    border: 2px solid;
+    border-right-width: 0;
+    border-left-width: 0; }
     @media screen and (max-width: 1600px) {
       article table {
         max-width: 1200px; } }
@@ -1358,10 +1365,15 @@ article {
       article table {
         max-width: 960px; } }
     article table th, article table td {
-      background-color: #f7f7f7;
+      margin: 0;
+      border: 1px solid;
+      border-top-width: 0;
+      border-left-width: 0;
       padding: 10px 20px; }
+      article table th:last-child, article table td:last-child {
+        border-right-width: 0; }
     article table caption {
-      font-size: 0.9em;
+      font-size: 1em;
       line-height: 1.2;
       color: gray; }
   article figure {
