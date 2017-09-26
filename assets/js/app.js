@@ -98,36 +98,9 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	var figuras = $('article figure');
 
-	var conjAnexos = $('div.anexos');
-	var nMaxAnexos = 8;
-
-	conjAnexos.each(function(index, el) {
-		var anexos = $(el).children('figure');
-		if (anexos.length > nMaxAnexos) {
-			var excessosAnexos = anexos.length - nMaxAnexos;
-			anexos.eq(nMaxAnexos-1).append('<p class="maisanexos">+'+excessosAnexos+'</p>')
-		}
-
-		var fancyboxArgs = [];
-		anexos.each(function(index2, el2) {
-			fancyboxArgs.push({
-				src: $(el2).children('img').attr('src'),
-				opts: {caption: $(el2).children('figcaption').text()}
-			});
-		});
-
-		$(el).on('click', function(event) {
-			$.fancybox.open(
-				fancyboxArgs, 
-				{
-					loop : false,
-					gutter: 0,
-					slideShow: false,
-					fullScreen: false,
-					
-				});
-			/* Act on the event */
-		});
+	figuras.on('click', function(event) {
+		$(this).toggleClass('maior');
 	});
 });

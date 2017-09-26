@@ -1342,6 +1342,10 @@ article {
     margin-bottom: 1em; }
     article .caixa h2, article .caixa h3, article .caixa h4, article .caixa h5 {
       margin-top: 0; }
+    article .caixa figure {
+      width: 50%; }
+      article .caixa figure.maior {
+        width: 100%; }
   article table {
     text-align: left;
     width: auto;
@@ -1360,23 +1364,74 @@ article {
       font-size: 0.9em;
       line-height: 1.2;
       color: gray; }
-  article > figure {
-    max-width: 1320px;
+  article figure {
+    width: 360px;
+    -webkit-transition: width 0.2s ease-out;
+    -moz-transition: width 0.2s ease-out;
+    transition: width 0.2s ease-out;
+    height: auto;
+    margin: 42px 0;
     padding: 0;
-    margin: 42px 0; }
-    @media screen and (max-width: 1600px) {
-      article > figure {
-        max-width: 1200px; } }
-    @media screen and (max-width: 1200px) {
-      article > figure {
-        max-width: 960px; } }
-    article > figure img {
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center; }
+    article figure:after {
+      content: '';
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      width: 40px;
+      height: 40px;
+      background-image: url(../img/ico_expand.svg);
+      background-size: contain;
+      opacity: 0;
+      -webkit-transition: opacity 0.2s linear;
+      -moz-transition: opacity 0.2s linear;
+      transition: opacity 0.2s linear; }
+    article figure:hover {
+      cursor: pointer; }
+      article figure:hover:before {
+        opacity: 1; }
+      article figure:hover:after {
+        opacity: 1; }
+    article figure.maior {
+      width: 720px; }
+      article figure.maior:after {
+        background-image: url(../img/ico_collapse.svg); }
+    article figure + * {
+      margin-top: 3em; }
+    article figure img {
       display: block;
       box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
       min-height: 50px;
       width: 100%;
       height: auto; }
-    article > figure figcaption {
+    article figure figcaption {
+      margin-top: 0.5em;
       text-align: center;
       display: block;
       font-size: 0.9em;

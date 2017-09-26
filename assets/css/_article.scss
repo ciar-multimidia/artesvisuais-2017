@@ -128,6 +128,12 @@ article {
 		margin-bottom: 1em;
 
 		h2, h3, h4, h5 {margin-top: 0;}
+		figure{
+			width: 50%;
+			&.maior{
+				width: 100%;
+			}
+		}
 	}
 
 	// Estilo de tabelas
@@ -151,11 +157,52 @@ article {
 	}
 
 
-	
-	& > figure{
-		@include largura-maxima(max-width);
-		padding: 0;
+	figure{
+		width: 360px;
+		@include transition(width 0.2s ease-out);
+		height: auto;
 		margin:42px 0;
+		padding: 0;
+		position: relative;
+
+
+		&:after{
+			content: '';
+			position: absolute;
+			right: 5px;
+			top: 5px;
+			width: 40px;
+			height: 40px;
+			background-image: url(../img/ico_expand.svg);
+			background-size: contain;
+			opacity: 0;
+			@include transition(opacity 0.2s linear);
+		}
+
+		&:hover{
+			cursor: pointer;	
+			&:before{
+				opacity: 1;
+			}
+			&:after{
+				opacity: 1;
+			}
+		}
+
+		&.maior{
+			width: 720px;
+			&:after{
+				background-image: url(../img/ico_collapse.svg);
+			}
+		}
+
+		& + *{
+			margin-top: 3em;
+		}
+		@include display(flex);
+		@include flex-direction(column);
+		@include align-items(center);
+
 		img{
 			display: block;
 			box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
@@ -163,7 +210,9 @@ article {
 			width: 100%;
 			height: auto;
 		}
+
 		figcaption{
+			margin-top: 0.5em;
 			text-align: center;
 			display: block;
 			font-size: 0.9em;
@@ -171,6 +220,8 @@ article {
 			color: grey;
 		}
 	}
+
+
 
 	span.numero-rodape{
 	    font-size: 0.8em;
