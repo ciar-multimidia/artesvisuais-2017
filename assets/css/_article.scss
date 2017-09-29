@@ -21,22 +21,23 @@ article {
 
 
 	h1 {
-		&[class^="eixo"]:after {
-			display: inline-block;
-			// font-weight: normal;
+		&[class^="eixo"]:before {
+			display: block;
+			font-weight: bold;
 			font-size: 12px;
 			text-transform: uppercase;
-			margin-left: 10px;
+			// margin-left: 10px;
+			margin-bottom: 1em;
 			font-family: $fonte-padrao;
 		}
 		// &.eixo1:before {content: "\25CF \0020 Eixo 1: Produ\00E7\00E3o e Cria\00E7\00E3o Art\00EDstico-Visual (PCA)"; color: $eixo1}
 		// &.eixo2:before {content: "\25CF \0020 Eixo 2: Fundamenta\00E7\00E3o Hist\00F3rica e Sociocultural em Artes Visuais (FHS)"; color: $eixo2}
 		// &.eixo3:before {content: "\25CF \0020 Eixo 3: Fundamenta\00E7\00E3o S\00F3cio-hist\00F3rica e Pedag\00F3gica das Artes Visuais na Educa\00E7\00E3o (FSP)"; color: $eixo3}
 		// &.eixo4:before {content: "\25CF \0020 Eixo 4: Pesquisa, Est\00E1gio e Pr\00E1tica Pedag\00F3gica em Artes Visuais (PEP)"; color: $eixo4}
-		&.eixo1:after {content: "\25CF \0020 Eixo 1"; color: $eixo1}
-		&.eixo2:after {content: "\25CF \0020 Eixo 2"; color: $eixo2}
-		&.eixo3:after {content: "\25CF \0020 Eixo 3"; color: $eixo3}
-		&.eixo4:after {content: "\25CF \0020 Eixo 4"; color: $eixo4}
+		&.eixo1:before {content: "\25CF \0020 Eixo 1"; color: $eixo1}
+		&.eixo2:before {content: "\25CF \0020 Eixo 2"; color: $eixo2}
+		&.eixo3:before {content: "\25CF \0020 Eixo 3"; color: $eixo3}
+		&.eixo4:before {content: "\25CF \0020 Eixo 4"; color: $eixo4}
 	}
 	
 	// Estilo basico dos autores
@@ -67,7 +68,7 @@ article {
 	& > {
 		h1,h2,h3,h4,h5,h6{
 			margin-bottom: 0;
-			line-height: 1.2;
+			line-height: 1.1;
 			width: $largura-minima;
 			font-family: $fonte-destaque;
 		}
@@ -139,18 +140,30 @@ article {
 	// Estilo de tabelas
 	
 	table{
+		font-size: 0.9em;
 		text-align: left;
 		width: auto;
 		@include largura-maxima(max-width);
 		min-width: $largura-minima;
+		border-spacing: 0;
+		border: 2px solid;
+		border-right-width: 0;
+		border-left-width: 0;
 		th, td{
-			// border: 1px solid black;
-			background-color: hsl(0,0, 97%);
+			margin: 0;
+			border: 1px solid;
+			border-top-width: 0;
+			border-left-width: 0;
+			// background-color: hsl(0,0, 97%);
 			padding: 10px 20px;
+			&:last-child{
+				border-right-width: 0;
+			}
 		}
 
+
 		caption{
-			font-size: 0.9em;
+			font-size: 1em;
 			line-height: 1.2;
 			color: gray;
 		}
