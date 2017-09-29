@@ -112,11 +112,11 @@ body.portal {
 	    		}
 
 	    		&:not(:first-child){
-	    			border-left-width: 5px;    				
+	    			// border-left-width: 5px;    				
     			}
 
     			& + .modulo{
-	    			border-left-width: 5px;
+	    			// border-left-width: 5px;
     			}
 
 	    		width: 50%;

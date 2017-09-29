@@ -19,6 +19,20 @@ article {
 		}	
 	}
 
+	a.eixo{
+		display: block;
+		font-weight: bold;
+		font-size: 12px;
+		text-transform: uppercase;
+		// margin-left: 10px;
+		margin-bottom: 1em;
+		font-family: $fonte-padrao;
+		&.e1 {color: $eixo1}
+		&.e2 {color: $eixo2}
+		&.e3 {color: $eixo3}
+		&.e4 {color: $eixo4}
+	}
+
 
 	h1 {
 		&[class^="eixo"]:before {
@@ -151,7 +165,7 @@ article {
 		border-left-width: 0;
 		th, td{
 			margin: 0;
-			border: 1px solid;
+			border: 1px solid hsl(0,0,65%);
 			border-top-width: 0;
 			border-left-width: 0;
 			// background-color: hsl(0,0, 97%);
@@ -225,8 +239,9 @@ article {
 		}
 
 		figcaption{
+			width: 100%;
 			margin-top: 0.5em;
-			text-align: center;
+			text-align: left;
 			display: block;
 			font-size: 0.9em;
 			line-height: 1.2;

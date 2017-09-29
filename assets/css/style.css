@@ -1249,6 +1249,21 @@ article {
     margin-top: 1em; }
     article > *:first-child {
       margin-top: 0; }
+  article a.eixo {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    font-family: "Roboto", sans-serif; }
+    article a.eixo.e1 {
+      color: #5B1980; }
+    article a.eixo.e2 {
+      color: #E75A19; }
+    article a.eixo.e3 {
+      color: #C70051; }
+    article a.eixo.e4 {
+      color: #0090B6; }
   article h1[class^="eixo"]:before {
     display: block;
     font-weight: bold;
@@ -1366,7 +1381,7 @@ article {
         max-width: 960px; } }
     article table th, article table td {
       margin: 0;
-      border: 1px solid;
+      border: 1px solid #a6a6a6;
       border-top-width: 0;
       border-left-width: 0;
       padding: 10px 20px; }
@@ -1443,8 +1458,9 @@ article {
       width: 100%;
       height: auto; }
     article figure figcaption {
+      width: 100%;
       margin-top: 0.5em;
-      text-align: center;
+      text-align: left;
       display: block;
       font-size: 0.9em;
       line-height: 1.2;
@@ -1768,10 +1784,6 @@ body.portal {
         width: 50%; }
         body.portal section .modulo:not(.desabilitado):target:before {
           content: none; }
-        body.portal section .modulo:not(.desabilitado):target:not(:first-child) {
-          border-left-width: 5px; }
-        body.portal section .modulo:not(.desabilitado):target + .modulo {
-          border-left-width: 5px; }
         body.portal section .modulo:not(.desabilitado):target a.anchor-modulo {
           display: none; }
         body.portal section .modulo:not(.desabilitado):target .box {
