@@ -1,18 +1,12 @@
 @page {
   margin: 2cm;
-  counter-increment: page;
-  counter-reset: page 1;
+  size: A4;
+  font-family: 'Calibri';
 }
-
-@page :first {
-  margin-top: 0cm;
-}
-
    
 body{
-	// padding: 40px 0;
   font-family: 'Calibri';
-  hyphens: auto
+  font-size: 14pt;
 }
 
 // links
@@ -20,14 +14,14 @@ a {
   color: black;
   text-decoration: none;
 
-  &[href]:after {
-      content: " (" attr(href) ")";
-  }
+  // &[href]:after {
+  //     content: " (" attr(href) ")";
+  // }
 
-  &[href^="#"]:after,
-  &[href^="javascript"]:after {
-      content: "";
-  }
+  // &[href^="#"]:after,
+  // &[href^="javascript"]:after {
+  //     content: "";
+  // }
 }
 
 // topo
@@ -36,7 +30,7 @@ a.marca {
   display: block;
   margin: 0;
   line-height: 1;
-  font-size: 1cm;
+  font-size: 1.2cm;
   padding: 0 0 0.5cm;
   border-bottom: 1px solid gray;
   font-weight: bold;
@@ -48,9 +42,10 @@ a.marca {
 
 // textos
 h1 {
-  font-size: 0.7cm;
+  font-size: 1cm;
+  margin:0;
 
-  &:before {display: block; font-size: 0.5cm}
+  &:before {display: block; font-size: 0.4cm}
   &.eixo1:before {content: "\0020 Eixo 1";}
   &.eixo2:before {content: "\0020 Eixo 2";}
   &.eixo3:before {content: "\0020 Eixo 3";}
@@ -63,21 +58,73 @@ h4, h5, h6 {font-size: 1em}
 
 h1, h2, h3, h4, h5, h6 {margin-top: 1cm}
 
+
+em, i {font-style: italic;}
+strong, b {font-weight: bold;}
+
 p {
   text-indent: 1cm;
-  // page-break-inside:avoid;
-  // page-break-after:auto; 
   widows: 3; 
   orphans: 3;
+  page-break-inside:avoid;
 }
 
 .autores {
-  background: hsl(0,0%,90%);
-  padding: 0.3cm;
-
-  h3 {margin: 0}
+  h3 {margin: 0; }
   p {text-indent: 0; margin: 0;}
 }
+
+table {
+  text-align: left;
+  width: 100%;
+  border-spacing: 0;
+  margin-top: 1cm;
+  border: 2px solid;
+  border-right-width: 0;
+  border-left-width: 0;
+  th, td{
+    margin: 0;
+    border: 1px solid hsl(0,0,65%);
+    border-top-width: 0;
+    border-left-width: 0;
+    padding: 10px 20px;
+
+    p {text-indent: 0}
+    &:last-child{
+      border-right-width: 0;
+    }
+  }
+
+  tr {page-break-inside:avoid;}
+
+
+  caption{
+    text-align: left;
+    line-height: 1.2;
+    color: gray;
+  }
+}
+
+blockquote {
+  margin-left: 2.5cm;
+  color: hsl(0,0,45%);
+  p {text-indent: 0}
+}
+
+
+.caixa {
+  page-break-inside:avoid;
+  padding: 0.3cm;
+  margin-top: 0.5cm;
+  border: 1px solid hsl(0,0,65%);
+
+  h3, h4, h5, h6 {margin-top: 0}
+
+  p:last-of-type {margin-bottom: 0}
+}
+
+
+hr {margin: 1cm 0;}
 
 // ocultar itens
 .marcaciar, #rodape, .pagina, .salvarpagina {
