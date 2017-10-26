@@ -1,0 +1,85 @@
+@page {
+  margin: 2cm;
+  counter-increment: page;
+  counter-reset: page 1;
+}
+
+@page :first {
+  margin-top: 0cm;
+}
+
+   
+body{
+	// padding: 40px 0;
+  font-family: 'Calibri';
+  hyphens: auto
+}
+
+// links
+a {
+  color: black;
+  text-decoration: none;
+
+  &[href]:after {
+      content: " (" attr(href) ")";
+  }
+
+  &[href^="#"]:after,
+  &[href^="javascript"]:after {
+      content: "";
+  }
+}
+
+// topo
+a.marca {
+  width: 100%;
+  display: block;
+  margin: 0;
+  line-height: 1;
+  font-size: 1cm;
+  padding: 0 0 0.5cm;
+  border-bottom: 1px solid gray;
+  font-weight: bold;
+
+  .modulo {display: block; font-size: 0.5cm}
+
+  &:after {display: none;}
+}
+
+// textos
+h1 {
+  font-size: 0.7cm;
+
+  &:before {display: block; font-size: 0.5cm}
+  &.eixo1:before {content: "\0020 Eixo 1";}
+  &.eixo2:before {content: "\0020 Eixo 2";}
+  &.eixo3:before {content: "\0020 Eixo 3";}
+  &.eixo4:before {content: "\0020 Eixo 4";}
+}
+
+h2 {font-size: 0.6cm}
+h3 {font-size: 0.5cm}
+h4, h5, h6 {font-size: 1em}
+
+h1, h2, h3, h4, h5, h6 {margin-top: 1cm}
+
+p {
+  text-indent: 1cm;
+  // page-break-inside:avoid;
+  // page-break-after:auto; 
+  widows: 3; 
+  orphans: 3;
+}
+
+.autores {
+  background: hsl(0,0%,90%);
+  padding: 0.3cm;
+
+  h3 {margin: 0}
+  p {text-indent: 0; margin: 0;}
+}
+
+// ocultar itens
+.marcaciar, #rodape, .pagina, .salvarpagina {
+  display: none;
+}
