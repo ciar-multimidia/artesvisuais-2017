@@ -66,7 +66,7 @@ p {
   text-indent: 1cm;
   widows: 3; 
   orphans: 3;
-  page-break-inside:avoid;
+  // page-break-inside:avoid;
 }
 
 .autores {
@@ -121,6 +121,24 @@ blockquote {
   h3, h4, h5, h6 {margin-top: 0}
 
   p:last-of-type {margin-bottom: 0}
+}
+
+figure {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  page-break-inside:avoid;
+
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+  }
+
+  figcaption {
+    text-align: center;
+  }
 }
 
 
