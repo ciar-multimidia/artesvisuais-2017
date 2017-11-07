@@ -1,11 +1,25 @@
 jQuery(document).ready(function($) {
 
 	if ($('#rodape').attr('data-bt-subir') !== 'false') {
-		$('#rodape > .container').append('<a href="#subir" class="btn-subir">subir</a>');
-		$('a.btn-subir').on('click', function(){
+		$('#rodape > .container').append(
+			'<div class="botoes-fixos">\
+				<div class="posrel">\
+					<a href="#subir" class="btn-subir"></a>\
+					<a href="" class="btn-imprimir"></a>\
+				</div>\
+			</div>'		
+			
+			);
+		$('a.btn-subir').on('click', function(event){
+			event.preventDefault();
 		  $('html, body').animate({scrollTop:0},1100);
 		  return false;
 		});	
+
+		$('.btn-imprimir').on('click', function(event) {
+			event.preventDefault();
+			$(window)[0].print();
+		});
 	}
 
 	
