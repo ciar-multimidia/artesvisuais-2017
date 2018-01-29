@@ -1,2 +1,132 @@
-@page{margin:2cm;size:A4;font-family:'Calibri'}body{font-family:'Calibri';font-size:14pt}a{color:black;text-decoration:none}a.marca{width:100%;display:block;margin:0;line-height:1;font-size:1.2cm;padding:0 0 0.5cm;border-bottom:1px solid gray;font-weight:bold}a.marca .modulo{display:block;font-size:0.5cm}a.marca:after{display:none}h1{font-size:1cm;margin:0}h1:before{display:block;font-size:0.4cm}h1.eixo1:before{content:"\0020 Eixo 1"}h1.eixo2:before{content:"\0020 Eixo 2"}h1.eixo3:before{content:"\0020 Eixo 3"}h1.eixo4:before{content:"\0020 Eixo 4"}h2{font-size:0.6cm}h3{font-size:0.5cm}h4,h5,h6{font-size:1em}h1,h2,h3,h4,h5,h6{margin-top:1cm}em,i{font-style:italic}strong,b{font-weight:bold}p{text-indent:1cm;widows:3;orphans:3}.autores h3{margin:0}.autores p{text-indent:0;margin:0}table{text-align:left;width:100%;border-spacing:0;margin-top:1cm;border:2px solid;border-right-width:0;border-left-width:0}table th,table td{margin:0;border:1px solid #a6a6a6;border-top-width:0;border-left-width:0;padding:10px 20px}table th p,table td p{text-indent:0}table th:last-child,table td:last-child{border-right-width:0}table tr{page-break-inside:avoid}table caption{text-align:left;line-height:1.2;color:gray}blockquote{margin-left:2.5cm;color:#737373}blockquote p{text-indent:0}.caixa{page-break-inside:avoid;padding:0.3cm;margin-top:0.5cm;border:1px solid #a6a6a6}.caixa h3,.caixa h4,.caixa h5,.caixa h6{margin-top:0}.caixa p:last-of-type{margin-bottom:0}figure{width:100%;margin-left:0;margin-right:0;page-break-inside:avoid}figure img{max-width:100%;margin:0 auto;display:block;text-align:center}figure figcaption{text-align:center}hr{margin:1cm 0}.marcaciar,#rodape,.pagina,.salvarpagina{display:none}
+@page {
+  margin: 2cm;
+  size: A4;
+  font-family: 'Calibri'; }
+body {
+  font-family: 'Calibri';
+  font-size: 14pt; }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+a.marca {
+  width: 100%;
+  display: block;
+  margin: 0;
+  line-height: 1;
+  font-size: 1.2cm;
+  padding: 0 0 0.5cm;
+  border-bottom: 1px solid gray;
+  font-weight: bold; }
+  a.marca .modulo {
+    display: block;
+    font-size: 0.5cm; }
+  a.marca:after {
+    display: none; }
+
+h1 {
+  font-size: 1cm;
+  margin: 0; }
+  h1:before {
+    display: block;
+    font-size: 0.4cm; }
+  h1.eixo1:before {
+    content: "\0020 Eixo 1"; }
+  h1.eixo2:before {
+    content: "\0020 Eixo 2"; }
+  h1.eixo3:before {
+    content: "\0020 Eixo 3"; }
+  h1.eixo4:before {
+    content: "\0020 Eixo 4"; }
+
+h2 {
+  font-size: 0.6cm; }
+
+h3 {
+  font-size: 0.5cm; }
+
+h4, h5, h6 {
+  font-size: 1em; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1cm; }
+
+em, i {
+  font-style: italic; }
+
+strong, b {
+  font-weight: bold; }
+
+p {
+  text-indent: 1cm;
+  widows: 3;
+  orphans: 3; }
+
+.autores h3 {
+  margin: 0; }
+.autores p {
+  text-indent: 0;
+  margin: 0; }
+
+table {
+  text-align: left;
+  width: 100%;
+  border-spacing: 0;
+  margin-top: 1cm;
+  border: 2px solid;
+  border-right-width: 0;
+  border-left-width: 0; }
+  table th, table td {
+    margin: 0;
+    border: 1px solid #a6a6a6;
+    border-top-width: 0;
+    border-left-width: 0;
+    padding: 10px 20px; }
+    table th p, table td p {
+      text-indent: 0; }
+    table th:last-child, table td:last-child {
+      border-right-width: 0; }
+  table tr {
+    page-break-inside: avoid; }
+  table caption {
+    text-align: left;
+    line-height: 1.2;
+    color: gray; }
+
+blockquote {
+  margin-left: 2.5cm;
+  color: #737373; }
+  blockquote p {
+    text-indent: 0; }
+
+.caixa {
+  page-break-inside: avoid;
+  padding: 0.3cm;
+  margin-top: 0.5cm;
+  border: 1px solid #a6a6a6; }
+  .caixa h3, .caixa h4, .caixa h5, .caixa h6 {
+    margin-top: 0; }
+  .caixa p:last-of-type {
+    margin-bottom: 0; }
+
+figure {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  page-break-inside: avoid; }
+  figure img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: center; }
+  figure figcaption {
+    text-align: center; }
+
+hr {
+  margin: 1cm 0; }
+
+.marcaciar, #rodape, .pagina, .salvarpagina {
+  display: none; }
+
 /*# sourceMappingURL=print.css.map */
