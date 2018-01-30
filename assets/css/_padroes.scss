@@ -95,6 +95,23 @@ a, a:link, a:visited, a:active, a:focus {
     }
 }
 
+// tipos de listas numeradas
+
+ol{
+    &.upper-roman{
+        list-style-type: upper-roman;
+    }
+    &.lower-roman{
+        list-style-type: lower-roman;
+    }
+    &.upper-latin{
+        list-style-type: upper-latin;
+    }
+    &.lower-latin{
+        list-style-type: lower-latin;
+    }
+}
+
 
 // ocultar e esconder itens
 .ocultar {
