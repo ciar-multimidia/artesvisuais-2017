@@ -56,20 +56,24 @@ article {
 	
 	// Estilo basico dos autores
 	.autores{
-				padding: 20px 26px;
-				display: inline-block;
-				background-color: lighten($padrao,60%);
-				width: $largura-minima;
-				// border: 1px solid black;
-				text-align: left;
-				margin-top: 2em;
-				margin-bottom: 1em;
-				p{
-					margin: 0;
-				}
-				h3{
-					margin: 0;
-				}
+		font-size: 0.9em;
+		padding: 20px 26px;
+		display: inline-block;
+		background-color: lighten($padrao,60%);
+		width: $largura-minima;
+		// border: 1px solid black;
+		text-align: left;
+		margin-top: 2em;
+		margin-bottom: 1em;
+		p{
+			margin: 0;
+			margin-bottom: 1em;
+
+		}
+		h3{
+			margin: 0;
+			margin-bottom: 0.5em;
+		}
 	}
 
 	h2.modulox{
