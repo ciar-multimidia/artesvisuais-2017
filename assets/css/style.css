@@ -1303,10 +1303,32 @@ article {
     margin-bottom: 1em; }
     article .autores p {
       margin: 0;
-      margin-bottom: 1em; }
+      margin-bottom: 1em;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      color: #eeeeee;
+      -webkit-transition: color 0.4s linear;
+      -moz-transition: color 0.4s linear;
+      transition: color 0.4s linear; }
+      article .autores p::first-line {
+        color: #555; }
     article .autores h3 {
       margin: 0;
       margin-bottom: 0.5em; }
+    article .autores a.bt-leia-mais {
+      float: right;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #5B1980;
+      font-size: 0.9em; }
+    article .autores.leia-mais p {
+      text-overflow: clip;
+      overflow: auto;
+      white-space: normal;
+      color: #555; }
+    article .autores.leia-mais a.bt-leia-mais {
+      display: none; }
   article h2.modulox {
     color: #5B1980;
     font-size: 2em; }

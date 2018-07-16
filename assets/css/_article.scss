@@ -68,11 +68,38 @@ article {
 		p{
 			margin: 0;
 			margin-bottom: 1em;
-
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			color: lighten($padrao,60%);
+			@include transition(color 0.4s linear);
+			&::first-line{
+				color: $padrao;
+			}
 		}
 		h3{
 			margin: 0;
 			margin-bottom: 0.5em;
+		}
+
+		a.bt-leia-mais{
+			float: right;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: $eixo1;
+			font-size: 0.9em;
+		}
+
+		&.leia-mais{
+			p{
+				text-overflow: clip;
+				overflow: auto;
+				white-space: normal;
+				color: $padrao;
+			}
+			a.bt-leia-mais{
+				display: none;
+			}
 		}
 	}
 

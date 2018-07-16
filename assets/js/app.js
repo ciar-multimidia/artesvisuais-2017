@@ -117,4 +117,11 @@ jQuery(document).ready(function($) {
 	figuras.on('click', function(event) {
 		$(this).toggleClass('maior');
 	});
+
+
+	// Botao que revela os minicurriculos
+	$('.autores').find('.bt-leia-mais').on('click', function(event) {
+		event.preventDefault();
+		$(this).closest('.autores').addClass('leia-mais');
+	});
 });
