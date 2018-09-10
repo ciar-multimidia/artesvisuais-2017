@@ -137,6 +137,10 @@ body.portal {
 	    			opacity: 1;
 	    		}
 
+		    	a.cover{
+		    		opacity: 1;
+		    	}
+
     			ul{
     				opacity: 1;
     			}
@@ -185,7 +189,28 @@ body.portal {
 	    		opacity: 0;
 	    	}
 
-			ul {
+	    	a.cover{
+	    		display: block;
+	    		font-weight: bold;
+	    		margin-top: 25px;
+				@include transition(opacity 0.2s linear 0.5s);
+				a:hover {text-decoration: underline;}
+				opacity: 0;
+
+				&:before {
+					background: $padrao;
+					width: 8px;
+					height: 8px;
+					@include transform(rotate(45deg));
+					margin-right: 6px;
+					// border-radius: 6px;
+					content: "";
+					display: inline-block;
+					vertical-align: middle;
+				}
+	    	}
+			
+			ul {	
 				opacity: 0;
 				@include transition(opacity 0.2s linear 0.5s);
 				list-style-type: none;
