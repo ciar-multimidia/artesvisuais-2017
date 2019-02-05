@@ -1865,7 +1865,7 @@ article {
 
 .apresenta-eixo {
   background: rgba(255, 255, 255, 0.6);
-  margin: 10px;
+  margin: 10px auto;
   padding: 35px;
   position: relative;
   font-size: 0.95em; }
