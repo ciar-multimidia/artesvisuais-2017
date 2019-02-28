@@ -1541,10 +1541,12 @@ article {
     article .caixa figure {
       margin: 0 auto;
       max-width: 100%; }
-    article .caixa section.galeria > a figure {
-      max-width: 350px; }
-      article .caixa section.galeria > a figure img {
-        height: 150px; }
+    article .caixa section.galeria {
+      width: 100%; }
+      article .caixa section.galeria > a figure {
+        max-width: 350px; }
+        article .caixa section.galeria > a figure img {
+          height: 150px; }
   article table {
     clear: right;
     margin-top: 3em;
