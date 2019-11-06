@@ -78,13 +78,28 @@
 				}
 			}
 
+			.com-logo-editora{
+				@include display(flex);
+				@include align-items(flex-end);
+				.logo-editora{
+					display: block;
+					height: 4.3em;
+					width: auto;
+					margin-right: 1.5em;
+					margin-bottom: 0.5em;
+				}
+				p{
+					white-space: nowrap
+				}
+			}
+
 		}
 
 		img.marcas{
 			position: relative;
 			display: block;
 			width: $largura-minima;
-			margin: 20px auto 0;
+			margin: 60px auto 0;
 		}
 	}
 
